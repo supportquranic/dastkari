@@ -38,9 +38,9 @@ export const CategoryBento: React.FC = () => {
     {
       id: 'lighting',
       name: 'Ajrak',
-      count: '3 pieces',
+      count: '4 pieces',
       tint: 'var(--butter)',
-      image: '/images/pendant.webp',
+      image: '/images/ajrak1.webp',
       gridArea: 'lighting',
       isLarge: false,
       imageWidth: '55%',
