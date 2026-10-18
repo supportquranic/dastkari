@@ -1,0 +1,140 @@
+/* ==========================================================================
+   KVIST Design System Tokens & Base Styles
+   Audited & Calibrated Reference Specifications
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Dastkari Signature Terracotta & Sand */
+  --canvas: #EFE6DC;
+  --card: #E4D3C2;
+  --main-ink: #B55B2C;
+  --secondary-ink: #7A3B1B;
+  --faint-ink: #9C5B35;
+  --dividers: rgba(181, 91, 44, 0.22);
+
+  /* Pastel Card Tints (Harmonized with Terracotta & Sand) */
+  --sage: #DCE3D3;
+  --butter: #F0E5C8;
+  --sand: #EADDCB;
+  --blush: #EBDAD2;
+  --sky: #D9E2ED;
+  --stone: #E2DDD5;
+
+  /* Accent & Status */
+  --accent: #2F47D0;
+  --accent-soft: #E2E6FA;
+  --success: #23784B;
+  --success-soft: #DCEFE2;
+  --warning: #9A6512;
+  --warning-soft: #F6E8CC;
+  --danger: #B23A27;
+
+  /* Typography */
+  --font-display: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Radii */
+  --radius-row: 16px;
+  --radius-sm: 16px;
+  --radius-card: 24px;
+  --radius-tile: 28px;
+  --radius-drawer: 28px;
+  --radius-footer: 32px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-tile: 0 1px 0 rgba(28, 27, 24, 0.04), 0 14px 34px -20px rgba(28, 27, 24, 0.20);
+  --shadow-elevated: 0 28px 50px -26px rgba(28, 27, 24, 0.38);
+  --shadow-floor: 0 20px 30px -10px rgba(28, 27, 24, 0.25);
+
+  /* Spacing */
+  --gutter-desktop: 20px;
+  --gap-desktop: 16px;
+  --gutter-mobile: 12px;
+  --gap-mobile: 12px;
+
+  /* Transitions & Animation Curves */
+  --ease-shared: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-hover: 300ms;
+  --duration-reveal: 500ms;
+  --duration-long: 700ms;
+}
+
+/* Base Reset & Globals */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--canvas);
+  color: var(--main-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--canvas);
+  color: var(--main-ink);
+  overflow-x: hidden;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Typography Utility Classes */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 11px;
+}
+
+/* Surface & Tint Utilities */
+.bg-canvas { background-color: var(--canvas); }
+.bg-card { background-color: var(--card); }
+.bg-sage { background-color: var(--sage); }
+.bg-butter { background-color: var(--butter); }
+.bg-sand { background-color: var(--sand); }
+.bg-blush { background-color: var(--blush); }
+.bg-sky { background-color: var(--sky); }
+.bg-stone { background-color: var(--stone); }
+.bg-ink { background-color: var(--main-ink); color: #E4D3C2; }
+
+.shadow-tile { box-shadow: var(--shadow-tile); }
+.shadow-elevated { box-shadow: var(--shadow-elevated); }
+
+.rounded-tile { border-radius: var(--radius-tile); }
+.rounded-card { border-radius: var(--radius-card); }
+.rounded-row { border-radius: var(--radius-row); }
+.rounded-pill { border-radius: var(--radius-pill); }
+
+/* Common Reusable Layouts */
+.site-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: var(--gutter-desktop);
+  padding-right: var(--gutter-desktop);
+}
+
+@media (max-width: 768px) {
+  .site-container {
+    padding-left: var(--gutter-mobile);
+    padding-right: var(--gutter-mobile);
+  }
+}

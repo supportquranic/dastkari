@@ -1,0 +1,400 @@
+/* ==========================================================================
+   KVIST Reusable Components, Animations & Surface Utilities
+   ========================================================================== */
+
+/* Button & Pill Styles */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--duration-hover) var(--ease-shared);
+  border: 1px solid transparent;
+  outline: none;
+  white-space: nowrap;
+}
+
+.btn-pill-ink {
+  background-color: var(--main-ink);
+  color: #E4D3C2;
+}
+
+.btn-pill-ink:hover {
+  background-color: #9A4A20;
+  transform: translateY(-1px);
+}
+
+.btn-pill-cream {
+  background-color: var(--card);
+  color: var(--main-ink);
+  border: 1px solid var(--dividers);
+}
+
+.btn-pill-cream:hover {
+  background-color: #D7C4B0;
+  transform: translateY(-1px);
+}
+
+.btn-pill-outline {
+  background-color: transparent;
+  color: var(--main-ink);
+  border: 1px solid var(--dividers);
+}
+
+.btn-pill-outline:hover {
+  background-color: rgba(181, 91, 44, 0.08);
+}
+
+/* Badge Pills */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(228, 211, 194, 0.95);
+  backdrop-filter: blur(8px);
+  color: var(--main-ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(181, 91, 44, 0.25);
+}
+
+/* Base Card & Bento Tile Surfaces */
+.card-tile {
+  background-color: var(--card);
+  border-radius: var(--radius-tile);
+  box-shadow: var(--shadow-tile);
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow var(--duration-hover) var(--ease-shared);
+}
+
+/* Star Rating */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #d4a017;
+  font-size: 13px;
+}
+
+/* Product Card Spec from Section 4.4 */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-panel-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-tile);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow var(--duration-hover) var(--ease-shared);
+}
+
+.product-floor-shadow {
+  position: absolute;
+  bottom: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 58%;
+  height: 24px;
+  background: radial-gradient(ellipse at center, rgba(28, 27, 24, 0.55) 0%, rgba(28, 27, 24, 0) 70%);
+  filter: blur(8px);
+  opacity: 0.55;
+  border-radius: 50%;
+  transition: opacity var(--duration-long) var(--ease-shared), transform var(--duration-long) var(--ease-shared);
+  pointer-events: none;
+}
+
+.product-cutout-img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  z-index: 2;
+  transition: transform var(--duration-long) var(--ease-shared);
+}
+
+.product-add-btn {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--main-ink);
+  color: #E4D3C2;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 4px 12px rgba(28, 27, 24, 0.2);
+  opacity: 0;
+  transform: translateY(8px) rotate(-90deg);
+  transition: opacity var(--duration-hover) var(--ease-shared), transform var(--duration-hover) var(--ease-shared);
+}
+
+/* Hover effects */
+@media (hover: hover) {
+  .product-card:hover .product-panel-wrap {
+    transform: none;
+  }
+
+  .product-card:hover .product-cutout-img {
+    transform: translateY(-14px) rotate(-2deg);
+  }
+
+  .product-card:hover .product-floor-shadow {
+    opacity: 0.32;
+    transform: translateX(-50%) scaleX(0.78);
+  }
+
+  .product-card:hover .product-add-btn,
+  .product-card:focus-within .product-add-btn {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+
+  .product-card .product-add-btn:hover {
+    transform: translateY(0) rotate(45deg);
+    background-color: #000000;
+  }
+}
+
+@media (hover: none) {
+  .product-add-btn {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Keyframe Animations for Hero Bento */
+@keyframes chairFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pendantSwing {
+  0%, 100% {
+    transform: rotate(-4.5deg);
+  }
+  50% {
+    transform: rotate(4.5deg);
+  }
+}
+
+@keyframes rotateBadge {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes truckTranslate {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(110px);
+  }
+}
+
+/* Responsive adjustments for Hero Bento */
+@media (max-width: 1024px) {
+  .hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .hero-tile-chair {
+    min-height: 480px !important;
+  }
+
+  .hero-tile-lighting,
+  .hero-tile-delivery {
+    min-height: 220px !important;
+  }
+}
+
+/* Standard 4-Column Product Grid (Cards never oversize or stretch) */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--gap-desktop);
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-mobile);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: var(--gap-mobile);
+  }
+}
+
+/* Category Bento Grid (Section 4.3 Specifications) */
+.category-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 270px);
+  grid-template-areas:
+    "seating seating lighting tables"
+    "seating seating textiles ceramics";
+  gap: var(--gap-desktop);
+  width: 100%;
+}
+
+.category-tile {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  cursor: pointer;
+  border-radius: var(--radius-tile);
+  box-shadow: var(--shadow-tile);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.category-tile-large {
+  min-height: 560px;
+}
+
+.category-arrow-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(251, 250, 247, 0.9);
+  color: var(--main-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(28, 27, 24, 0.08);
+  transition: background-color 500ms var(--ease-shared), color 500ms var(--ease-shared);
+}
+
+.arrow-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 500ms var(--ease-shared);
+}
+
+.category-cutout-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.category-cutout-img {
+  position: absolute;
+  object-fit: contain;
+  transition: transform 700ms var(--ease-shared);
+  will-change: transform;
+  z-index: 5;
+}
+
+/* Hover: Raise cutout 12px and rotate -3deg; arrow circle turns dark ink & arrow rotates -45deg */
+@media (hover: hover) {
+  .category-tile:hover .category-cutout-img {
+    transform: translateY(-12px) rotate(-3deg);
+  }
+
+  .category-tile:hover .category-arrow-circle {
+    background-color: var(--main-ink) !important;
+    color: #ffffff !important;
+  }
+
+  .category-tile:hover .category-arrow-circle svg,
+  .category-tile:hover .arrow-icon svg {
+    stroke: #ffffff !important;
+    color: #ffffff !important;
+  }
+
+  .category-tile:hover .arrow-icon {
+    transform: rotate(-45deg);
+    color: #ffffff !important;
+  }
+
+  .category-tile:hover .category-pattern-layer {
+    opacity: 0.28 !important;
+    transform: scale(1.04);
+  }
+}
+
+/* Responsive Category Bento */
+@media (max-width: 960px) {
+  .category-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "seating seating"
+      "lighting tables"
+      "textiles ceramics";
+  }
+
+  .category-tile-large {
+    min-height: 420px;
+  }
+
+  .category-tile-small {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .category-bento-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .category-tile {
+    min-height: 260px;
+  }
+}

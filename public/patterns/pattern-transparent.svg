@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="360" height="360">
+<defs>
+<g id="petal">
+<path d="M0,-4 C-32,-12 -34,-52 0,-64 C34,-52 32,-12 0,-4Z" fill="#F0245E" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M0,-10 C-18,-16 -18,-42 0,-52 C18,-42 18,-16 0,-10Z" fill="#FF5C8A" opacity=".75"/>
+<g stroke="#fff" stroke-width="1.1" stroke-linecap="round" fill="none" opacity=".9"><path d="M-2.6,-11 Q-9.9,-24.7 -21.9,-44.9"/><path d="M-1.8,-11 Q-6.6,-26.3 -14.6,-47.8"/><path d="M-0.9,-11 Q-3.5,-27.2 -7.8,-49.4"/><path d="M0.0,-11 Q0.0,-27.5 0.0,-50.0"/><path d="M0.9,-11 Q3.5,-27.2 7.8,-49.4"/><path d="M1.8,-11 Q6.6,-26.3 14.6,-47.8"/><path d="M2.6,-11 Q9.9,-24.7 21.9,-44.9"/></g>
+<g stroke="#B80F45" stroke-width="1.2" stroke-linecap="round" fill="none"><path d="M0,-12 V-54"/><path d="M-2,-12 Q-10,-30 -9,-50"/><path d="M2,-12 Q10,-30 9,-50"/><path d="M-3,-10 Q-20,-25 -21,-46"/><path d="M3,-10 Q20,-25 21,-46"/></g>
+</g>
+<g id="flower">
+<use href="#petal"/><use href="#petal" transform="rotate(72)"/><use href="#petal" transform="rotate(144)"/><use href="#petal" transform="rotate(216)"/><use href="#petal" transform="rotate(288)"/>
+<circle r="10" fill="#FFD41A" stroke="#fff" stroke-width="1.6"/><circle r="5" fill="#F58A1F"/>
+<g fill="#fff"><circle cx="0" cy="-7.5" r="1.1"/><circle cx="7.1" cy="-2.3" r="1.1"/><circle cx="4.4" cy="6" r="1.1"/><circle cx="-4.4" cy="6" r="1.1"/><circle cx="-7.1" cy="-2.3" r="1.1"/></g>
+</g>
+<g id="leafG"><path d="M0,0 C14,-16 16,-50 0,-76 C-16,-50 -14,-16 0,0Z" fill="#14A36E" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><path d="M0,0 C14,-16 16,-50 0,-76Z" fill="#0B7A5A"/><path d="M0,-4 Q1,-40 0,-68" stroke="#7FE3B8" stroke-width="1.5" fill="none"/></g>
+<g id="leafY"><path d="M0,0 C14,-16 16,-50 0,-76 C-16,-50 -14,-16 0,0Z" fill="#FFB81C" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><path d="M0,0 C14,-16 16,-50 0,-76Z" fill="#F58A1F"/><path d="M0,-4 Q1,-40 0,-68" stroke="#FFE58A" stroke-width="1.5" fill="none"/></g>
+<g id="leafT"><path d="M0,0 C14,-16 16,-50 0,-76 C-16,-50 -14,-16 0,0Z" fill="#19B3CF" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><path d="M0,0 C14,-16 16,-50 0,-76Z" fill="#0E7F9C"/><path d="M0,-4 Q1,-40 0,-68" stroke="#9AEAF7" stroke-width="1.5" fill="none"/></g>
+<g id="berry"><circle r="6" fill="#F0245E" stroke="#fff" stroke-width="2"/><circle cx="-1.8" cy="-2" r="1.6" fill="#FF9DB9"/></g>
+<g id="dB"><circle r="5" fill="#1B3FD0" stroke="#fff" stroke-width="1.2"/><circle cx="-1.5" cy="-1.8" r="1.4" fill="#7F9BFF"/></g>
+<g id="dP"><circle r="5" fill="#F0245E" stroke="#fff" stroke-width="1.2"/><circle cx="-1.5" cy="-1.8" r="1.4" fill="#FF9DB9"/></g>
+<g id="motif">
+<use href="#leafT" transform="rotate(45) scale(1)"/><use href="#leafT" transform="rotate(225) scale(1)"/>
+<use href="#leafG" transform="rotate(135) scale(1.12)"/><use href="#leafG" transform="rotate(315) scale(1.12)"/>
+<use href="#leafY" transform="rotate(0) scale(1)"/><use href="#leafY" transform="rotate(90) scale(1)"/><use href="#leafY" transform="rotate(180) scale(1)"/><use href="#leafY" transform="rotate(270) scale(1)"/>
+<use href="#flower" transform="scale(.7)"/>
+</g>
+<g id="accent">
+<g transform="rotate(22.5)"><use href="#dP" x="26.0" y="0.0"/><use href="#dB" x="18.4" y="18.4"/><use href="#dP" x="0.0" y="26.0"/><use href="#dB" x="-18.4" y="18.4"/><use href="#dP" x="-26.0" y="0.0"/><use href="#dB" x="-18.4" y="-18.4"/><use href="#dP" x="-0.0" y="-26.0"/><use href="#dB" x="18.4" y="-18.4"/></g>
+<circle r="9" fill="#FFD41A" stroke="#fff" stroke-width="1.6"/><circle r="4" fill="#F58A1F"/>
+<g><use href="#berry" x="32.5" y="32.5" transform="translate(0,0)"/><use href="#berry" x="-32.5" y="32.5" transform="translate(0,0)"/><use href="#berry" x="-32.5" y="-32.5" transform="translate(0,0)"/><use href="#berry" x="32.5" y="-32.5" transform="translate(0,0)"/></g>
+</g>
+<pattern id="dk" patternTransform="translate(40,40)" width="360" height="360" patternUnits="userSpaceOnUse">
+<rect width="360" height="360" fill="#1530B8"/>
+
+<g fill="#FFD41A" stroke="#fff" stroke-width="1.2"><circle cx="0" cy="0" r="6"/><circle cx="360" cy="0" r="6"/><circle cx="0" cy="360" r="6"/><circle cx="360" cy="360" r="6"/><circle cx="180" cy="180" r="6"/></g>
+<use href="#dB" x="180" y="0"/><use href="#dB" x="180" y="360"/><use href="#dP" x="0" y="180"/><use href="#dP" x="360" y="180"/>
+<use href="#motif" transform="translate(90,90)"/>
+<use href="#motif" transform="translate(270,270)"/>
+<use href="#accent" transform="translate(270,90)"/>
+<use href="#accent" transform="translate(90,270)"/>
+</pattern>
+<linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A4AD8" stop-opacity=".22"/><stop offset=".5" stop-color="#1530B8" stop-opacity="0"/><stop offset="1" stop-color="#0A1C8A" stop-opacity=".25"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE04A"/><stop offset="1" stop-color="#FFC81A"/></linearGradient>
+<filter id="sh" x="-3%" y="-1%" width="106%" height="102%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#000" flood-opacity=".25"/></filter>
+<g id="bL"><path d="M0,0 C8,-6 8,-16 0,-24 C-8,-16 -8,-6 0,0Z" fill="#12A26C" stroke="#fff" stroke-width="1.4"/><path d="M0,-3 V-20" stroke="#8EE6A8" stroke-width="1.2"/></g>
+</defs>
+
+
+
+<g fill="#FFD41A" stroke="#fff" stroke-width="1.2"><circle cx="0" cy="0" r="6"/><circle cx="360" cy="0" r="6"/><circle cx="0" cy="360" r="6"/><circle cx="360" cy="360" r="6"/><circle cx="180" cy="180" r="6"/></g>
+<use href="#dB" x="180" y="0"/><use href="#dB" x="180" y="360"/><use href="#dP" x="0" y="180"/><use href="#dP" x="360" y="180"/>
+<use href="#motif" transform="translate(90,90)"/>
+<use href="#motif" transform="translate(270,270)"/>
+<use href="#accent" transform="translate(270,90)"/>
+<use href="#accent" transform="translate(90,270)"/>
+
+</svg>
