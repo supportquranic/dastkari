@@ -3,7 +3,7 @@ import type { Category, Product } from '../types';
 export const CATEGORIES: Category[] = [
   { id: 'seating', name: 'Blue Pottery', tint: 'sage', image: '/images/chair.webp', count: 4 },
   { id: 'lighting', name: 'Ajrak', tint: 'butter', image: '/images/ajrak1.webp', count: 4 },
-  { id: 'tables', name: 'Camel Skin Lamp', tint: 'sand', image: '/images/table.webp', count: 3 },
+  { id: 'tables', name: 'Camel Skin Lamp', tint: 'sand', image: '/images/lamp1.webp', count: 3 },
   { id: 'textiles', name: 'Truck Art', tint: 'blush', image: '/images/throw.webp', count: 4 },
   { id: 'ceramics', name: 'Rugs', tint: 'sky', image: '/images/vase.webp', count: 3 },
 ];
@@ -230,7 +230,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.9,
     reviews: 164,
     tint: 'sand',
-    image: '/images/table.webp',
+    image: '/images/lamp1.webp',
     scene: '/images/feature-detail.jpg',
     stock: 12,
     badge: 'Bestseller',
@@ -256,7 +256,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.8,
     reviews: 118,
     tint: 'butter',
-    image: '/images/pendant.webp',
+    image: '/images/lamp2.webp',
     stock: 16,
     badge: 'Artisan Pick',
     blurb: 'Handcrafted globe lamp made from translucent camel skin parchment, adorned with vibrant hand-painted floral designs in shades of pink, cobalt, and emerald.',
@@ -281,7 +281,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.8,
     reviews: 82,
     tint: 'stone',
-    image: '/images/stool.webp',
+    image: '/images/lamp.webp',
     stock: 10,
     blurb: 'Tapered artisan lamp sculpted from cured translucent leather, painted with miniature court floral patterns that glow with golden warmth.',
     finishes: [

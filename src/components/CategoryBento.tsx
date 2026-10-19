@@ -52,7 +52,7 @@ export const CategoryBento: React.FC = () => {
       name: 'Camel Skin Lamp',
       count: '3 pieces',
       tint: 'var(--sand)',
-      image: '/images/table.webp',
+      image: '/images/lamp1.webp',
       gridArea: 'tables',
       isLarge: false,
       imageWidth: '58%',
