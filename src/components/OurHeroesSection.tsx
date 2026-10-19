@@ -9,7 +9,7 @@ export const OurHeroesSection: React.FC = () => {
       location: 'Multan, Pakistan',
       experience: '42 years experience',
       tint: 'var(--sage)',
-      image: '/images/art1.webp',
+      image: '/images/art1.png',
       quote: 'Every swirl of cobalt glaze carries stories taught to me by my grandfather on the foot-spun wheel.',
     },
     {
@@ -18,7 +18,7 @@ export const OurHeroesSection: React.FC = () => {
       location: 'Matiari, Sindh',
       experience: '38 years experience',
       tint: 'var(--sky)',
-      image: '/images/art2.webp',
+      image: '/images/art2.png',
       quote: 'True Ajrak drinks the sun and the river Indus 16 times before its indigo and madder red are born.',
     },
     {
@@ -27,7 +27,7 @@ export const OurHeroesSection: React.FC = () => {
       location: 'Multan, Pakistan',
       experience: '29 years experience',
       tint: 'var(--butter)',
-      image: '/images/art3.webp',
+      image: '/images/art3.png',
       quote: 'We clean and sculpt the leather so thin that when dusk falls, it glows like amber in the dark.',
     },
     {
@@ -36,7 +36,7 @@ export const OurHeroesSection: React.FC = () => {
       location: 'Karachi, Pakistan',
       experience: '35 years experience',
       tint: 'var(--blush)',
-      image: '/images/art4.webp',
+      image: '/images/art4.png',
       quote: 'Our brush strokes celebrate life in full vivid color — every motif is a prayer for safe travel.',
     },
   ];
@@ -93,7 +93,7 @@ export const OurHeroesSection: React.FC = () => {
         </p>
       </div>
 
-      {/* 4 Cards Grid with Image Placeholders */}
+      {/* 4 Cards Grid with Full Reveal 4:5 Images */}
       <div
         className="heroes-cards-grid"
         style={{
@@ -114,37 +114,37 @@ export const OurHeroesSection: React.FC = () => {
               flexDirection: 'column',
               justifyContent: 'space-between',
               boxShadow: 'var(--shadow-tile)',
-              minHeight: '440px',
               transition: 'transform 300ms var(--ease-shared), box-shadow 300ms var(--ease-shared)',
             }}
           >
-            {/* Image Portrait Box */}
+            {/* Image Portrait Box with Full 4:5 Reveal */}
             <div>
               <div
                 style={{
                   width: '100%',
-                  aspectRatio: '4 / 3.8',
+                  aspectRatio: '4 / 5',
                   borderRadius: '20px',
                   overflow: 'hidden',
                   position: 'relative',
-                  boxShadow: '0 6px 20px rgba(181, 91, 44, 0.14)',
+                  boxShadow: '0 8px 24px rgba(181, 91, 44, 0.16)',
+                  backgroundColor: 'rgba(28, 27, 24, 0.04)',
                 }}
               >
                 <img
                   src={hero.image}
                   alt={hero.name}
+                  loading="lazy"
                   style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    objectPosition: 'center 15%',
                     display: 'block',
                     transition: 'transform 400ms ease',
                   }}
                 />
               </div>
 
-              {/* Craft Badge & Origin */}
+              {/* Craft Label & Origin (Pill Removed) */}
               <div
                 style={{
                   display: 'flex',
@@ -154,10 +154,19 @@ export const OurHeroesSection: React.FC = () => {
                   fontSize: '12px',
                 }}
               >
-                <span className="badge-pill" style={{ padding: '3px 10px', fontSize: '10px' }}>
+                <span
+                  className="font-mono"
+                  style={{
+                    color: 'var(--faint-ink)',
+                    fontSize: '11px',
+                    fontWeight: 650,
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                  }}
+                >
                   {hero.craft}
                 </span>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--secondary-ink)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--secondary-ink)', fontSize: '12px' }}>
                   <MapPin size={12} />
                   <span>{hero.location}</span>
                 </div>
@@ -170,7 +179,7 @@ export const OurHeroesSection: React.FC = () => {
                   fontSize: '22px',
                   fontWeight: 650,
                   color: 'var(--main-ink)',
-                  marginTop: '12px',
+                  marginTop: '10px',
                   lineHeight: 1.1,
                 }}
               >
@@ -197,7 +206,7 @@ export const OurHeroesSection: React.FC = () => {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '6px',
-                marginTop: '18px',
+                marginTop: '20px',
                 paddingTop: '14px',
                 borderTop: '1px solid rgba(28, 27, 24, 0.1)',
                 fontSize: '12px',
