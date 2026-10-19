@@ -9,7 +9,7 @@ export const OurHeroesSection: React.FC = () => {
       location: 'Multan, Pakistan',
       experience: '42 years experience',
       tint: 'var(--sage)',
-      image: '/images/artisan-pottery.jpg',
+      image: '/images/art1.webp',
       quote: 'Every swirl of cobalt glaze carries stories taught to me by my grandfather on the foot-spun wheel.',
     },
     {
@@ -18,7 +18,7 @@ export const OurHeroesSection: React.FC = () => {
       location: 'Matiari, Sindh',
       experience: '38 years experience',
       tint: 'var(--sky)',
-      image: '/images/artisan-ajrak.jpg',
+      image: '/images/art2.webp',
       quote: 'True Ajrak drinks the sun and the river Indus 16 times before its indigo and madder red are born.',
     },
     {
@@ -27,7 +27,7 @@ export const OurHeroesSection: React.FC = () => {
       location: 'Multan, Pakistan',
       experience: '29 years experience',
       tint: 'var(--butter)',
-      image: '/images/artisan-camellamp.jpg',
+      image: '/images/art3.webp',
       quote: 'We clean and sculpt the leather so thin that when dusk falls, it glows like amber in the dark.',
     },
     {
@@ -36,7 +36,7 @@ export const OurHeroesSection: React.FC = () => {
       location: 'Karachi, Pakistan',
       experience: '35 years experience',
       tint: 'var(--blush)',
-      image: '/images/artisan-truckart.jpg',
+      image: '/images/art4.webp',
       quote: 'Our brush strokes celebrate life in full vivid color — every motif is a prayer for safe travel.',
     },
   ];
@@ -123,7 +123,7 @@ export const OurHeroesSection: React.FC = () => {
               <div
                 style={{
                   width: '100%',
-                  aspectRatio: '4 / 3.4',
+                  aspectRatio: '4 / 3.8',
                   borderRadius: '20px',
                   overflow: 'hidden',
                   position: 'relative',
@@ -137,6 +137,7 @@ export const OurHeroesSection: React.FC = () => {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
+                    objectPosition: 'center 15%',
                     display: 'block',
                     transition: 'transform 400ms ease',
                   }}
