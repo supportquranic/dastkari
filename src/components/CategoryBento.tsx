@@ -50,7 +50,7 @@ export const CategoryBento: React.FC = () => {
     {
       id: 'tables',
       name: 'Camel Skin Lamp',
-      count: '3 pieces',
+      count: '2 pieces',
       tint: 'var(--sand)',
       image: '/images/lamp1.webp',
       gridArea: 'tables',
