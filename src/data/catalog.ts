@@ -5,7 +5,6 @@ export const CATEGORIES: Category[] = [
   { id: 'lighting', name: 'Ajrak', tint: 'butter', image: '/images/ajrak1.webp', count: 4 },
   { id: 'tables', name: 'Camel Skin Lamp', tint: 'sand', image: '/images/lamp1.webp', count: 2 },
   { id: 'textiles', name: 'Truck Art', tint: 'blush', image: '/images/throw.webp', count: 4 },
-  { id: 'ceramics', name: 'Rugs', tint: 'sky', image: '/images/vase.webp', count: 3 },
 ];
 
 export const PRODUCTS: Product[] = [
@@ -377,83 +376,5 @@ export const PRODUCTS: Product[] = [
     ],
     dimensions: 'Ø 9 × H 11 cm · Capacity 350 ml',
     care: 'Hand wash with soft sponge. Dry immediately.',
-  },
-
-  // ==========================================
-  // 5. RUGS (ceramics category ID)
-  // ==========================================
-  {
-    id: 'pink-and-grey-rug',
-    name: 'Pink and Grey Handwoven Rug',
-    category: 'ceramics',
-    price: 4500,
-    rating: 4.9,
-    reviews: 112,
-    tint: 'sky',
-    image: '/images/vase.webp',
-    stock: 15,
-    badge: 'Bestseller',
-    blurb: 'Reversible tribal rug crafted on traditional hand-looms with bold geometric motifs inspired by heritage pastoral patterns. Textured, durable, and grounded.',
-    finishes: [
-      { name: 'Blush & Slate Grey', color: '#B57E88' },
-      { name: 'Ivory & Charcoal', color: '#454545' },
-    ],
-    details: [
-      '100% pure hand-spun cotton & wool blend',
-      'Double-sided reversible flat weave',
-      'Hand-knotted fringe edges',
-      'Heritage tribal geometric pattern',
-    ],
-    dimensions: '120 × 180 cm',
-    care: 'Vacuum on low without beater bar. Spot clean with damp cloth.',
-  },
-  {
-    id: 'blue-pink-rug',
-    name: 'Blue & Pink Handwoven Rug',
-    category: 'ceramics',
-    price: 4500,
-    rating: 4.8,
-    reviews: 79,
-    tint: 'sage',
-    image: '/images/throw.webp',
-    stock: 18,
-    badge: 'Handloom',
-    blurb: 'Geometric kilim rug featuring soft natural indigo and blush pink yarn. Woven by village weavers using centuries-old pit-loom techniques.',
-    finishes: [
-      { name: 'Indigo & Pastel Pink', color: '#27477D' },
-      { name: 'Natural Khadi', color: '#D4C9B4' },
-    ],
-    details: [
-      'Pit-loom handwoven yarn',
-      'Durable flat-weave construction',
-      'All-season breathable texture',
-      'Artisan hand-finished edges',
-    ],
-    dimensions: '120 × 180 cm',
-    care: 'Shake out outdoors. Spot clean spills immediately.',
-  },
-  {
-    id: 'shahnoor-khais-rug',
-    name: 'Shahnoor Handcrafted Khais Rug',
-    category: 'ceramics',
-    price: 5000,
-    rating: 4.9,
-    reviews: 94,
-    tint: 'butter',
-    image: '/images/chair.webp',
-    stock: 11,
-    blurb: 'Traditional Pakistani Khais featuring dynamic horizontal banding and geometric circles in turquoise, terracotta, and indigo hues.',
-    finishes: [
-      { name: 'Multicolor Heritage', color: '#247B7B' },
-      { name: 'Terracotta Indigo', color: '#8F3E2F' },
-    ],
-    details: [
-      'Hand-spun pure cotton yarn',
-      'Traditional jacquard & twill weave',
-      'Reversible heavy drape',
-      'Can be styled as floor runner, bedspread or rug',
-    ],
-    dimensions: '135 × 210 cm',
-    care: 'Gentle hand wash cold or gentle machine cycle in laundry bag.',
   },
 ];

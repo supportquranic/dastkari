@@ -71,18 +71,6 @@ export const CategoryBento: React.FC = () => {
       imageBottom: '12px',
       imageRight: '20px',
     },
-    {
-      id: 'ceramics',
-      name: 'Rugs',
-      count: '3 pieces',
-      tint: 'var(--sky)',
-      image: '/images/vase.webp',
-      gridArea: 'ceramics',
-      isLarge: false,
-      imageWidth: '42%',
-      imageBottom: '5px',
-      imageRight: '24px',
-    },
   ];
 
   return (

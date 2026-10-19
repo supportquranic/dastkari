@@ -42,7 +42,6 @@ export const Footer: React.FC = () => {
               <button onClick={() => navigateTo('/shop?c=lighting')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>Ajrak</button>
               <button onClick={() => navigateTo('/shop?c=tables')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>Camel Skin Lamp</button>
               <button onClick={() => navigateTo('/shop?c=textiles')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>Truck Art</button>
-              <button onClick={() => navigateTo('/shop?c=ceramics')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>Rugs</button>
             </div>
           </div>
 

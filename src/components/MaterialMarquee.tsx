@@ -6,7 +6,7 @@ export const MaterialMarquee: React.FC = () => {
     'Pure Sindhi Indigo Ajrak',
     'Hand-Painted Camel Skin Lamps',
     'Raw Folk Truck Art',
-    'Handwoven Tribal Kilim Rugs',
+    'Generations of Living Heritage',
     '48-Hour Nationwide Dispatch',
     'Direct Artisan Livelihood',
   ];

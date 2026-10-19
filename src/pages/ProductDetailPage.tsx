@@ -22,7 +22,6 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId 
     lighting: 'Ajrak',
     tables: 'Camel Skin Lamp',
     textiles: 'Truck Art',
-    ceramics: 'Rugs',
   };
 
   const relatedProducts = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id).slice(0, 2);

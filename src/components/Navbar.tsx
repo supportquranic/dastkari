@@ -16,12 +16,11 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { label: 'Shop', path: '/shop' },
-    { label: 'Stories', path: '/stories' },
     { label: 'Blue Pottery', path: '/shop?c=seating' },
     { label: 'Ajrak', path: '/shop?c=lighting' },
     { label: 'Camel Skin Lamp', path: '/shop?c=tables' },
     { label: 'Truck Art', path: '/shop?c=textiles' },
-    { label: 'Rugs', path: '/shop?c=ceramics' },
+    { label: 'Stories', path: '/stories' },
   ];
 
   return (

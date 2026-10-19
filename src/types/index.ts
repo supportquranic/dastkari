@@ -6,7 +6,7 @@ export interface Finish {
 export interface Product {
   id: string;
   name: string;
-  category: 'seating' | 'lighting' | 'tables' | 'textiles' | 'ceramics';
+  category: 'seating' | 'lighting' | 'tables' | 'textiles';
   price: number;
   rating: number;
   reviews: number;

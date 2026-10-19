@@ -19,7 +19,6 @@ export const ShopPage: React.FC = () => {
     lighting: 'Ajrak',
     tables: 'Camel Skin Lamp',
     textiles: 'Truck Art',
-    ceramics: 'Rugs',
   };
 
   const filteredProducts = PRODUCTS.filter(p => {

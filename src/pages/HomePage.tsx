@@ -19,7 +19,6 @@ export const HomePage: React.FC = () => {
     { label: 'Ajrak', id: 'lighting' },
     { label: 'Camel Skin Lamp', id: 'tables' },
     { label: 'Truck Art', id: 'textiles' },
-    { label: 'Rugs', id: 'ceramics' },
   ];
 
   const categoryNameMap: Record<string, string> = {
@@ -27,7 +26,6 @@ export const HomePage: React.FC = () => {
     lighting: 'Ajrak',
     tables: 'Camel Skin Lamp',
     textiles: 'Truck Art',
-    ceramics: 'Rugs',
   };
 
   const displayedProducts = selectedFilter === 'all'

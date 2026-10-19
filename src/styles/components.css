@@ -282,7 +282,7 @@
   grid-template-rows: repeat(2, 270px);
   grid-template-areas:
     "seating seating lighting tables"
-    "seating seating textiles ceramics";
+    "seating seating textiles textiles";
   gap: var(--gap-desktop);
   width: 100%;
 }
@@ -376,7 +376,7 @@
     grid-template-areas:
       "seating seating"
       "lighting tables"
-      "textiles ceramics";
+      "textiles textiles";
   }
 
   .category-tile-large {

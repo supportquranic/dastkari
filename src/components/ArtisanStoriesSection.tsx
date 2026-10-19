@@ -15,7 +15,7 @@ export const ArtisanStoriesSection: React.FC = () => {
       story:
         'In the historic alleyways of Multan, Ustad Allah Ditta turns local riverbed clay on foot-spun wooden wheels, hand-painting turquoise and Persian cobalt floral motifs that have remained unbroken for four centuries.',
       quote: '“The clay listens to your fingers. If you hurry, it loses its soul.”',
-      image: '/images/artisan-pottery.jpg',
+      image: '/images/artisan-pottery.png',
       linkText: 'Explore Blue Pottery',
       linkPath: '/shop?c=seating',
       accent: '#2B579A',
