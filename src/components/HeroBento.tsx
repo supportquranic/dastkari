@@ -147,7 +147,7 @@ export const HeroBento: React.FC = () => {
           style={{
             gridColumn: 'span 5',
             gridRow: 'span 6',
-            backgroundColor: '#FFFFFF',
+            backgroundColor: 'var(--sage)',
             position: 'relative',
             overflow: 'hidden',
             display: 'flex',

@@ -336,7 +336,7 @@ export const PRODUCTS: Product[] = [
     price: 1080,
     rating: 4.8,
     reviews: 142,
-    tint: 'stone',
+    tint: 'sky',
     image: '/images/cushion.webp',
     stock: 40,
     badge: 'Popular',

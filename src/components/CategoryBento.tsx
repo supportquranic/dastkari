@@ -27,7 +27,7 @@ export const CategoryBento: React.FC = () => {
       id: 'seating',
       name: 'Blue Pottery',
       count: '4 pieces',
-      tint: '#FFFFFF',
+      tint: 'var(--sage)',
       image: '/images/chair.webp',
       gridArea: 'seating',
       isLarge: true,
