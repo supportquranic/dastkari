@@ -230,20 +230,26 @@
 
 /* Responsive adjustments for Hero Bento */
 @media (max-width: 1024px) {
-  .hero-grid {
-    display: flex !important;
-    flex-direction: column !important;
+  .hero-bento-section {
     height: auto !important;
     min-height: auto !important;
   }
 
+  .hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: auto !important;
+  }
+
   .hero-tile-chair {
-    min-height: 480px !important;
+    min-height: 440px !important;
   }
 
   .hero-tile-lighting,
   .hero-tile-delivery {
-    min-height: 220px !important;
+    min-height: 200px !important;
   }
 }
 

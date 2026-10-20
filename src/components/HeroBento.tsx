@@ -1,31 +1,33 @@
 import React from 'react';
 import { useShop } from '../context/ShopContext';
 import { PRODUCTS } from '../data/catalog';
-import { ArrowRight, Star, Plus, Truck } from 'lucide-react';
+import { ArrowRight, Plus, Truck } from 'lucide-react';
 
 export const HeroBento: React.FC = () => {
   const { navigateTo, addToCart } = useShop();
   const chairProduct = PRODUCTS.find(p => p.id === 'suroor-e-parinda-angoor-bagh') || PRODUCTS[0];
   const pendantProduct = PRODUCTS.find(p => p.id === 'chamak-truck-pendant') || PRODUCTS[3];
 
-
-
   return (
     <section
+      className="hero-bento-section"
       style={{
-        marginTop: '16px',
-        marginBottom: '40px',
+        marginTop: '24px',
+        marginBottom: '28px',
       }}
     >
-      {/* 12-column × 6-row Bento Grid */}
+      {/* 12-column × 6-row Bento Grid sized to fit exactly in one screen view */}
       <div
         className="hero-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(12, 1fr)',
-          gridTemplateRows: 'repeat(6, minmax(115px, 1fr))',
-          gap: 'var(--gap-desktop)',
-          minHeight: '720px',
+          gridTemplateRows: 'repeat(6, 1fr)',
+          gap: '14px',
+          height: 'calc(100svh - 122px)',
+          maxHeight: '615px',
+          minHeight: '470px',
+          boxSizing: 'border-box',
         }}
       >
         {/* =================================================================
@@ -36,30 +38,32 @@ export const HeroBento: React.FC = () => {
           style={{
             gridColumn: 'span 7',
             gridRow: 'span 4',
-            padding: 'clamp(24px, 3.2vw, 42px)',
+            padding: 'clamp(20px, 2.4vw, 36px)',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
             backgroundColor: 'var(--card)',
-            minHeight: '480px',
+            minHeight: 0,
+            overflow: 'hidden',
           }}
         >
           {/* Top season pill */}
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
               <span className="badge-pill">Collection 2026</span>
-              <span className="font-mono" style={{ color: 'var(--faint-ink)' }}>Handcrafted in Pakistan</span>
+              <span className="font-mono" style={{ color: 'var(--faint-ink)', fontSize: '11px' }}>Handcrafted in Pakistan</span>
             </div>
 
             {/* Oversized Two-Line Heading */}
             <h1
               className="font-display hero-main-heading"
               style={{
-                fontSize: 'clamp(2.4rem, 4.4vw, 4.2rem)',
+                fontSize: 'clamp(2.1rem, 3.8vw, 3.6rem)',
                 fontWeight: 650,
                 lineHeight: 0.98,
                 letterSpacing: '-0.038em',
-                marginTop: '16px',
+                marginTop: '12px',
+                marginBottom: 0,
                 color: 'var(--main-ink)',
               }}
             >
@@ -69,10 +73,11 @@ export const HeroBento: React.FC = () => {
             {/* Description */}
             <p
               style={{
-                fontSize: 'clamp(14px, 1.15vw, 16px)',
-                lineHeight: 1.5,
+                fontSize: 'clamp(13px, 1.05vw, 15px)',
+                lineHeight: 1.48,
                 color: 'var(--secondary-ink)',
-                marginTop: '14px',
+                marginTop: '12px',
+                marginBottom: 0,
                 maxWidth: '520px',
               }}
             >
@@ -80,67 +85,29 @@ export const HeroBento: React.FC = () => {
             </p>
           </div>
 
-          {/* Bottom actions & social proof */}
-          <div style={{ marginTop: '20px' }}>
-            {/* Action buttons */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', marginBottom: '18px' }}>
-              <button
-                onClick={() => navigateTo('/shop')}
-                className="btn-pill btn-pill-ink"
-                style={{ height: '48px', padding: '0 24px', fontSize: '14px' }}
-              >
-                <span>Explore the collection</span>
-                <ArrowRight size={16} />
-              </button>
+          {/* Action buttons (Testimonials completely removed) */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', marginTop: '14px' }}>
+            <button
+              onClick={() => navigateTo('/shop')}
+              className="btn-pill btn-pill-ink"
+              style={{ height: '44px', padding: '0 22px', fontSize: '13.5px' }}
+            >
+              <span>Explore the collection</span>
+              <ArrowRight size={15} />
+            </button>
 
-              <button
-                onClick={() => navigateTo(`/product/${chairProduct.id}`)}
-                className="btn-pill btn-pill-cream"
-                style={{ height: '48px', padding: '0 22px', fontSize: '14px' }}
-              >
-                Featured Piece
-              </button>
-            </div>
-
-            {/* Social proof */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', paddingTop: '16px', borderTop: '1px solid var(--dividers)' }}>
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img
-                  src="/images/avatar-1.jpg"
-                  alt="Customer"
-                  style={{ width: '34px', height: '34px', borderRadius: '50%', border: '2px solid var(--card)', objectFit: 'cover' }}
-                />
-                <img
-                  src="/images/avatar-2.jpg"
-                  alt="Customer"
-                  style={{ width: '34px', height: '34px', borderRadius: '50%', border: '2px solid var(--card)', marginLeft: '-8px', objectFit: 'cover' }}
-                />
-                <img
-                  src="/images/avatar-3.jpg"
-                  alt="Customer"
-                  style={{ width: '34px', height: '34px', borderRadius: '50%', border: '2px solid var(--card)', marginLeft: '-8px', objectFit: 'cover' }}
-                />
-              </div>
-
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <div className="star-rating">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={13} fill="#d4a017" stroke="#d4a017" />
-                    ))}
-                  </div>
-                  <span style={{ fontWeight: 600, fontSize: '13px', marginLeft: '4px' }}>4.9 / 5</span>
-                </div>
-                <div style={{ fontSize: '12px', color: 'var(--faint-ink)', marginTop: '2px' }}>
-                  From over 1,200 slow homes worldwide
-                </div>
-              </div>
-            </div>
+            <button
+              onClick={() => navigateTo(`/product/${chairProduct.id}`)}
+              className="btn-pill btn-pill-cream"
+              style={{ height: '44px', padding: '0 20px', fontSize: '13.5px' }}
+            >
+              Featured Piece
+            </button>
           </div>
         </div>
 
         {/* =================================================================
-            2. Hero Chair Tile (5 cols × 6 rows)
+            2. Hero Featured Tile (5 cols × 6 rows - Full Height)
             ================================================================= */}
         <div
           className="card-tile hero-tile-chair"
@@ -153,14 +120,15 @@ export const HeroBento: React.FC = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            padding: '32px',
+            padding: '24px',
+            minHeight: 0,
           }}
         >
           {/* Header row: Product Title at Left, Circular Material Badge at Right */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', zIndex: 10 }}>
             <div>
-              <span className="font-mono" style={{ color: 'var(--faint-ink)' }}>BESTSELLER</span>
-              <h2 className="font-display" style={{ fontSize: '26px', fontWeight: 650, marginTop: '4px' }}>
+              <span className="font-mono" style={{ color: 'var(--faint-ink)', fontSize: '11px' }}>BESTSELLER</span>
+              <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 650, marginTop: '2px', lineHeight: 1.15 }}>
                 {chairProduct.name}
               </h2>
             </div>
@@ -169,8 +137,8 @@ export const HeroBento: React.FC = () => {
             <div
               style={{
                 position: 'relative',
-                width: '76px',
-                height: '76px',
+                width: '64px',
+                height: '64px',
                 borderRadius: '50%',
                 backgroundColor: 'rgba(251, 250, 247, 0.9)',
                 backdropFilter: 'blur(8px)',
@@ -178,6 +146,7 @@ export const HeroBento: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 boxShadow: 'var(--shadow-tile)',
+                flexShrink: 0,
               }}
             >
               {/* Rotating SVG circular text */}
@@ -197,15 +166,15 @@ export const HeroBento: React.FC = () => {
                 />
                 <text fontSize="9.2" fontWeight="600" fill="var(--main-ink)" letterSpacing="0.14em">
                   <textPath href="#circlePath">
-                    SOLID FSC® OAK • BOUCLÉ •
+                    SOLID RIVERBED CLAY • MULTAN •
                   </textPath>
                 </text>
               </svg>
               {/* Center icon */}
               <div
                 style={{
-                  width: '12px',
-                  height: '12px',
+                  width: '10px',
+                  height: '10px',
                   borderRadius: '50%',
                   backgroundColor: 'var(--main-ink)',
                 }}
@@ -213,11 +182,11 @@ export const HeroBento: React.FC = () => {
             </div>
           </div>
 
-          {/* Floating Chair Cutout & Soft Floor Shadow */}
+          {/* Floating Cutout & Soft Floor Shadow */}
           <div
             style={{
               position: 'absolute',
-              inset: '16% 6% 14% 6%',
+              inset: '14% 6% 14% 6%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -229,22 +198,22 @@ export const HeroBento: React.FC = () => {
             <div
               style={{
                 position: 'absolute',
-                bottom: '12%',
-                width: '68%',
-                height: '28px',
-                background: 'radial-gradient(ellipse at center, rgba(28,27,24,0.42) 0%, rgba(28,27,24,0) 72%)',
-                filter: 'blur(10px)',
+                bottom: '8%',
+                width: '64%',
+                height: '22px',
+                background: 'radial-gradient(ellipse at center, rgba(28,27,24,0.38) 0%, rgba(28,27,24,0) 72%)',
+                filter: 'blur(8px)',
                 borderRadius: '50%',
               }}
             />
 
-            {/* Vertically floating chair image */}
+            {/* Vertically floating vase image */}
             <img
               src={chairProduct.image}
               alt={chairProduct.name}
               style={{
-                width: '92%',
-                maxHeight: '440px',
+                width: '88%',
+                maxHeight: '340px',
                 objectFit: 'contain',
                 zIndex: 2,
                 animation: 'chairFloat 5s ease-in-out infinite',
@@ -259,7 +228,7 @@ export const HeroBento: React.FC = () => {
               backgroundColor: 'rgba(251, 250, 247, 0.95)',
               backdropFilter: 'blur(10px)',
               borderRadius: 'var(--radius-pill)',
-              padding: '8px 10px 8px 24px',
+              padding: '6px 8px 6px 20px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
@@ -268,32 +237,32 @@ export const HeroBento: React.FC = () => {
             }}
           >
             <div>
-              <span className="font-mono" style={{ color: 'var(--faint-ink)', fontSize: '10px' }}>PRICE</span>
-              <div style={{ fontSize: '18px', fontWeight: 650, color: 'var(--main-ink)' }}>Rs. {chairProduct.price.toLocaleString()}</div>
+              <span className="font-mono" style={{ color: 'var(--faint-ink)', fontSize: '9px' }}>PRICE</span>
+              <div style={{ fontSize: '16px', fontWeight: 650, color: 'var(--main-ink)' }}>Rs. {chairProduct.price.toLocaleString()}</div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <button
                 onClick={() => navigateTo(`/product/${chairProduct.id}`)}
                 className="btn-pill btn-pill-outline"
-                style={{ height: '38px', padding: '0 16px', fontSize: '13px' }}
+                style={{ height: '36px', padding: '0 14px', fontSize: '12.5px' }}
               >
                 View piece
               </button>
               <button
                 onClick={() => addToCart(chairProduct)}
                 className="btn-pill btn-pill-ink"
-                style={{ width: '38px', height: '38px', padding: 0, borderRadius: '50%' }}
+                style={{ width: '36px', height: '36px', padding: 0, borderRadius: '50%' }}
                 title="Add to bag"
               >
-                <Plus size={18} />
+                <Plus size={16} />
               </button>
             </div>
           </div>
         </div>
 
         {/* =================================================================
-            3. Lighting Tile (4 cols × 2 rows)
+            3. Truck Art Pendant Tile (4 cols × 2 rows)
             ================================================================= */}
         <div
           className="card-tile hero-tile-lighting"
@@ -302,40 +271,41 @@ export const HeroBento: React.FC = () => {
             gridColumn: 'span 4',
             gridRow: 'span 2',
             backgroundColor: '#465F8E',
-            padding: '28px',
+            padding: '20px 22px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
             position: 'relative',
             overflow: 'hidden',
             cursor: 'pointer',
-            border: '3.5px solid #FFC81A',
-            boxShadow: '0 0 0 1.5px #E0A000, 0 10px 26px rgba(224, 160, 0, 0.16)',
+            border: '3px solid #FFC81A',
+            boxShadow: '0 0 0 1.5px #E0A000, 0 8px 20px rgba(224, 160, 0, 0.16)',
+            minHeight: 0,
           }}
         >
-          {/* Softened Pattern Overlay with Low Saturation */}
+          {/* Softened Pattern Overlay */}
           <div
             style={{
               position: 'absolute',
               inset: 0,
               backgroundImage: 'url(/patterns/pattern-blue.svg)',
-              backgroundSize: '150px auto',
+              backgroundSize: '140px auto',
               backgroundRepeat: 'repeat',
               backgroundPosition: 'center',
-              opacity: 0.32,
+              opacity: 0.3,
               pointerEvents: 'none',
               zIndex: 1,
             }}
           />
 
-          {/* Clean Typography - No Shape - Pure High-Contrast White & Gold */}
-          <div style={{ zIndex: 5, maxWidth: '60%', position: 'relative' }}>
+          {/* Typography */}
+          <div style={{ zIndex: 5, maxWidth: '62%', position: 'relative' }}>
             <span
               className="font-mono"
               style={{
                 color: '#FFE04A',
                 textTransform: 'uppercase',
-                fontSize: '11px',
+                fontSize: '10px',
                 fontWeight: 700,
                 letterSpacing: '0.08em',
                 display: 'block',
@@ -346,9 +316,9 @@ export const HeroBento: React.FC = () => {
             <h3
               className="font-display"
               style={{
-                fontSize: '22px',
+                fontSize: '18px',
                 fontWeight: 700,
-                marginTop: '6px',
+                marginTop: '4px',
                 color: '#FFFFFF',
                 lineHeight: 1.15,
               }}
@@ -357,9 +327,9 @@ export const HeroBento: React.FC = () => {
             </h3>
             <div
               style={{
-                fontSize: '17px',
+                fontSize: '15px',
                 fontWeight: 700,
-                marginTop: '8px',
+                marginTop: '4px',
                 color: '#FFE04A',
               }}
             >
@@ -370,15 +340,15 @@ export const HeroBento: React.FC = () => {
           <div style={{ zIndex: 5, position: 'relative' }}>
             <span
               style={{
-                fontSize: '13px',
+                fontSize: '12px',
                 fontWeight: 650,
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '6px',
+                gap: '5px',
                 color: '#FFFFFF',
               }}
             >
-              Explore Truck Art <ArrowRight size={14} color="#FFE04A" />
+              Explore Truck Art <ArrowRight size={13} color="#FFE04A" />
             </span>
           </div>
 
@@ -386,10 +356,10 @@ export const HeroBento: React.FC = () => {
           <div
             style={{
               position: 'absolute',
-              top: '-15px',
+              top: '-10px',
               right: '-5px',
-              width: '54%',
-              height: '130%',
+              width: '52%',
+              height: '125%',
               transformOrigin: '50% 0px',
               animation: 'pendantSwing 5.5s ease-in-out infinite',
               pointerEvents: 'none',
@@ -404,7 +374,7 @@ export const HeroBento: React.FC = () => {
                 height: '100%',
                 objectFit: 'contain',
                 objectPosition: 'top center',
-                filter: 'drop-shadow(0 14px 22px rgba(28,27,24,0.18))',
+                filter: 'drop-shadow(0 12px 18px rgba(28,27,24,0.18))',
               }}
             />
           </div>
@@ -419,28 +389,29 @@ export const HeroBento: React.FC = () => {
             gridColumn: 'span 3',
             gridRow: 'span 2',
             backgroundColor: 'var(--card)',
-            padding: '24px 28px',
+            padding: '20px 22px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
             position: 'relative',
             overflow: 'hidden',
+            minHeight: 0,
           }}
         >
           <div>
-            <span className="font-mono" style={{ color: 'var(--faint-ink)', letterSpacing: '0.08em', fontSize: '11px', fontWeight: 600 }}>DELIVERY</span>
-            <div style={{ marginTop: '8px' }}>
-              <h3 className="font-display" style={{ fontSize: '30px', fontWeight: 700, color: 'var(--main-ink)', letterSpacing: '-0.03em', lineHeight: 1 }}>
+            <span className="font-mono" style={{ color: 'var(--faint-ink)', letterSpacing: '0.08em', fontSize: '10px', fontWeight: 600 }}>DELIVERY</span>
+            <div style={{ marginTop: '4px' }}>
+              <h3 className="font-display" style={{ fontSize: '23px', fontWeight: 700, color: 'var(--main-ink)', letterSpacing: '-0.03em', lineHeight: 1.05 }}>
                 Free over Rs. 5,000
               </h3>
             </div>
-            <p style={{ fontSize: '13px', color: 'var(--secondary-ink)', marginTop: '8px', lineHeight: 1.4 }}>
+            <p style={{ fontSize: '12px', color: 'var(--secondary-ink)', marginTop: '6px', lineHeight: 1.35 }}>
               Dispatched in 48h nationwide. 30-day craft guarantee.
             </p>
           </div>
 
           {/* Animated Route & Circular Cobalt Delivery Truck */}
-          <div style={{ position: 'relative', height: '40px', width: '100%', display: 'flex', alignItems: 'center' }}>
+          <div style={{ position: 'relative', height: '34px', width: '100%', display: 'flex', alignItems: 'center' }}>
             {/* Dashed route line */}
             <svg width="100%" height="2" style={{ overflow: 'visible' }}>
               <line
@@ -458,20 +429,20 @@ export const HeroBento: React.FC = () => {
             <div
               style={{
                 position: 'absolute',
-                top: '2px',
-                left: '20px',
-                width: '36px',
-                height: '36px',
+                top: '0px',
+                left: '12px',
+                width: '32px',
+                height: '32px',
                 borderRadius: '50%',
                 backgroundColor: 'var(--accent)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 4px 12px rgba(47, 71, 208, 0.35)',
+                boxShadow: '0 4px 10px rgba(47, 71, 208, 0.35)',
                 animation: 'truckTranslate 4.5s ease-in-out infinite',
               }}
             >
-              <Truck size={17} color="#ffffff" strokeWidth={2.2} />
+              <Truck size={15} color="#ffffff" strokeWidth={2.2} />
             </div>
           </div>
         </div>
@@ -480,3 +451,4 @@ export const HeroBento: React.FC = () => {
     </section>
   );
 };
+
