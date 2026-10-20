@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
 import { PRODUCTS } from '../data/catalog';
-import { Star, ArrowLeft, ShieldCheck, Truck, RefreshCw } from 'lucide-react';
+import { Star, ArrowLeft, ShieldCheck, Truck, Sparkles, Leaf, Palette } from 'lucide-react';
 import type { Finish } from '../types';
 
 interface ProductDetailPageProps {
@@ -22,6 +22,41 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId 
     lighting: 'Ajrak',
     tables: 'Camel Skin Lamp',
     textiles: 'Truck Art',
+  };
+
+  const getProductHighlights = (category: string) => {
+    switch (category) {
+      case 'seating': // Blue Pottery
+        return [
+          { icon: <Truck size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Ships in 24–48h' },
+          { icon: <ShieldCheck size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Safe transit packing' },
+          { icon: <Sparkles size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: '100% Hand-glazed' },
+        ];
+      case 'lighting': // Ajrak
+        return [
+          { icon: <Truck size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Ships in 24–48h' },
+          { icon: <Leaf size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Pure organic cotton' },
+          { icon: <Sparkles size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Hand block-printed' },
+        ];
+      case 'tables': // Camel Skin Lamp
+        return [
+          { icon: <Truck size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Ships in 24–48h' },
+          { icon: <ShieldCheck size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Safe transit packing' },
+          { icon: <Sparkles size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Camel skin parchment' },
+        ];
+      case 'textiles': // Truck Art
+        return [
+          { icon: <Truck size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Ships in 24–48h' },
+          { icon: <Palette size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Authentic folk art' },
+          { icon: <ShieldCheck size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Hand-painted enamel' },
+        ];
+      default:
+        return [
+          { icon: <Truck size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Ships in 24–48h' },
+          { icon: <ShieldCheck size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Safe transit packing' },
+          { icon: <Sparkles size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />, label: 'Handmade by artisans' },
+        ];
+    }
   };
 
   const relatedProducts = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id).slice(0, 2);
@@ -140,9 +175,10 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId 
             background: 'var(--card)',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
-            <span className="font-mono" style={{ color: 'var(--faint-ink)' }}>{product.category}</span>
-            {product.badge && <span className="badge-pill">{product.badge}</span>}
+          <div style={{ marginBottom: '12px' }}>
+            <span className="font-mono" style={{ color: 'var(--faint-ink)', textTransform: 'uppercase', fontSize: '11px' }}>
+              {categoryNameMap[product.category] || product.category}
+            </span>
           </div>
 
           <h1 className="font-display" style={{ fontSize: '38px', fontWeight: 650, lineHeight: 1.05 }}>
@@ -220,20 +256,14 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId 
             </button>
           </div>
 
-          {/* Service Chips */}
+          {/* Service Chips - Tailored to craft category */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', marginTop: '24px', paddingTop: '20px', borderTop: '1px solid var(--dividers)' }}>
-            <div style={{ textAlign: 'center', fontSize: '12px', color: 'var(--secondary-ink)' }}>
-              <Truck size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />
-              Ships in 48h
-            </div>
-            <div style={{ textAlign: 'center', fontSize: '12px', color: 'var(--secondary-ink)' }}>
-              <RefreshCw size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />
-              30-night trial
-            </div>
-            <div style={{ textAlign: 'center', fontSize: '12px', color: 'var(--secondary-ink)' }}>
-              <ShieldCheck size={16} style={{ margin: '0 auto 4px', display: 'block', color: 'var(--main-ink)' }} />
-              10-yr warranty
-            </div>
+            {getProductHighlights(product.category).map((chip, idx) => (
+              <div key={idx} style={{ textAlign: 'center', fontSize: '12px', color: 'var(--secondary-ink)' }}>
+                {chip.icon}
+                {chip.label}
+              </div>
+            ))}
           </div>
 
           {/* Tabs: Details, Dimensions, Care */}

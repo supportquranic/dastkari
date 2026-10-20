@@ -84,23 +84,56 @@ export const Footer: React.FC = () => {
 
         {/* Bottom divider & copyright */}
         <div
+          className="footer-bottom-bar"
           style={{
             marginTop: '32px',
             paddingTop: '20px',
             borderTop: '1px solid rgba(228, 211, 194, 0.25)',
-            display: 'flex',
-            justifyContent: 'space-between',
+            display: 'grid',
+            gridTemplateColumns: '1fr auto 1fr',
             alignItems: 'center',
             fontSize: '12px',
             color: 'rgba(228, 211, 194, 0.75)',
-            flexWrap: 'wrap',
-            gap: '12px',
+            gap: '16px',
           }}
         >
-          <span>© 2026 DASTKARI. Handcrafted Pakistani heritage objects and slow living archive.</span>
-          <span className="font-mono">Handcrafted in Pakistan</span>
+          <span style={{ justifySelf: 'start' }}>
+            © 2026 DASTKARI. Handcrafted Pakistani heritage objects and slow living archive.
+          </span>
+          <span
+            style={{
+              justifySelf: 'center',
+              textAlign: 'center',
+              color: '#E4D3C2',
+              letterSpacing: '0.04em',
+              fontWeight: 500,
+              fontSize: '12px',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Redesigned by Talha Muzammil
+          </span>
+          <span className="font-mono" style={{ justifySelf: 'end', textAlign: 'right' }}>
+            Handcrafted in Pakistan
+          </span>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .footer-bottom-bar {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            gap: 10px !important;
+          }
+          .footer-bottom-bar > span {
+            justify-self: center !important;
+            text-align: center !important;
+          }
+        }
+      `}</style>
     </footer>
   );
 };

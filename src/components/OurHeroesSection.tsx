@@ -107,13 +107,14 @@ export const OurHeroesSection: React.FC = () => {
             key={i}
             className="card-tile hero-card-item"
             style={{
-              backgroundColor: hero.tint,
+              backgroundColor: 'var(--main-ink)',
               padding: '24px',
               borderRadius: 'var(--radius-tile)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              boxShadow: 'var(--shadow-tile)',
+              boxShadow: '0 16px 36px -12px rgba(181, 91, 44, 0.28)',
+              border: '1px solid rgba(228, 211, 194, 0.2)',
               transition: 'transform 300ms var(--ease-shared), box-shadow 300ms var(--ease-shared)',
             }}
           >
@@ -126,8 +127,8 @@ export const OurHeroesSection: React.FC = () => {
                   borderRadius: '20px',
                   overflow: 'hidden',
                   position: 'relative',
-                  boxShadow: '0 8px 24px rgba(181, 91, 44, 0.16)',
-                  backgroundColor: 'rgba(28, 27, 24, 0.04)',
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.25)',
+                  backgroundColor: 'rgba(28, 27, 24, 0.08)',
                 }}
               >
                 <img
@@ -144,7 +145,7 @@ export const OurHeroesSection: React.FC = () => {
                 />
               </div>
 
-              {/* Craft Label & Origin (Pill Removed) */}
+              {/* Craft Label & Origin */}
               <div
                 style={{
                   display: 'flex',
@@ -157,7 +158,7 @@ export const OurHeroesSection: React.FC = () => {
                 <span
                   className="font-mono"
                   style={{
-                    color: 'var(--faint-ink)',
+                    color: 'rgba(228, 211, 194, 0.7)',
                     fontSize: '11px',
                     fontWeight: 650,
                     letterSpacing: '0.08em',
@@ -166,8 +167,8 @@ export const OurHeroesSection: React.FC = () => {
                 >
                   {hero.craft}
                 </span>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--secondary-ink)', fontSize: '12px' }}>
-                  <MapPin size={12} />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'rgba(228, 211, 194, 0.85)', fontSize: '12px' }}>
+                  <MapPin size={12} color="#E4D3C2" />
                   <span>{hero.location}</span>
                 </div>
               </div>
@@ -178,7 +179,7 @@ export const OurHeroesSection: React.FC = () => {
                 style={{
                   fontSize: '22px',
                   fontWeight: 650,
-                  color: 'var(--main-ink)',
+                  color: '#E4D3C2',
                   marginTop: '10px',
                   lineHeight: 1.1,
                 }}
@@ -191,7 +192,7 @@ export const OurHeroesSection: React.FC = () => {
                 style={{
                   fontSize: '13px',
                   lineHeight: 1.5,
-                  color: 'var(--secondary-ink)',
+                  color: 'rgba(228, 211, 194, 0.85)',
                   marginTop: '10px',
                   fontStyle: 'italic',
                 }}
@@ -208,13 +209,13 @@ export const OurHeroesSection: React.FC = () => {
                 gap: '6px',
                 marginTop: '20px',
                 paddingTop: '14px',
-                borderTop: '1px solid rgba(28, 27, 24, 0.1)',
+                borderTop: '1px solid rgba(228, 211, 194, 0.2)',
                 fontSize: '12px',
-                color: 'var(--main-ink)',
+                color: '#E4D3C2',
                 fontWeight: 600,
               }}
             >
-              <Award size={14} color="var(--main-ink)" />
+              <Award size={14} color="#E4D3C2" />
               <span>{hero.experience}</span>
             </div>
           </div>

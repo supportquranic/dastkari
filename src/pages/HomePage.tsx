@@ -101,11 +101,6 @@ export const HomePage: React.FC = () => {
               onClick={() => navigateTo(`/product/${product.id}`)}
             >
               <div className={`product-panel-wrap bg-${product.tint}`}>
-                {product.badge && (
-                  <div style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 3 }}>
-                    <span className="badge-pill">{product.badge}</span>
-                  </div>
-                )}
                 <div className="product-floor-shadow" />
                 <img
                   src={product.image}

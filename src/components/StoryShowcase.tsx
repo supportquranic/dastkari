@@ -58,15 +58,15 @@ export const StoryShowcase: React.FC = () => {
       } else setOak(o);
     }, 25);
 
-    // Animate to 10
+    // Animate to 40
     let y = 0;
     const yTimer = setInterval(() => {
-      y += 1;
-      if (y >= 10) {
-        setWarranty(10);
+      y += 2;
+      if (y >= 40) {
+        setWarranty(40);
         clearInterval(yTimer);
       } else setWarranty(y);
-    }, 60);
+    }, 30);
   };
 
   const text =
@@ -200,7 +200,7 @@ export const StoryShowcase: React.FC = () => {
                 letterSpacing: '-0.02em',
               }}
             >
-              {animated ? warranty : 10}
+              {animated ? warranty : 40}+
             </div>
             <div
               style={{
@@ -210,7 +210,7 @@ export const StoryShowcase: React.FC = () => {
                 fontWeight: 500,
               }}
             >
-              year warranty
+              years heritage craft
             </div>
           </div>
         </div>

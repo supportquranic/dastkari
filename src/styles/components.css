@@ -109,6 +109,31 @@
   align-items: center;
   justify-content: center;
   transition: box-shadow var(--duration-hover) var(--ease-shared);
+  box-sizing: border-box;
+}
+
+.product-panel-wrap.bg-sage {
+  border: 1.5px solid rgba(132, 160, 122, 0.45);
+}
+
+.product-panel-wrap.bg-sky {
+  border: 1.5px solid rgba(135, 168, 208, 0.5);
+}
+
+.product-panel-wrap.bg-sand {
+  border: 1.5px solid rgba(195, 160, 115, 0.5);
+}
+
+.product-panel-wrap.bg-butter {
+  border: 1.5px solid rgba(212, 178, 88, 0.5);
+}
+
+.product-panel-wrap.bg-blush {
+  border: 1.5px solid rgba(200, 148, 122, 0.5);
+}
+
+.product-panel-wrap.bg-stone {
+  border: 1.5px solid rgba(180, 170, 155, 0.5);
 }
 
 .product-floor-shadow {

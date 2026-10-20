@@ -121,11 +121,6 @@ export const ShopPage: React.FC = () => {
                     overflow: 'hidden',
                   }}
                 >
-                  {product.badge && (
-                    <div style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 3 }}>
-                      <span className="badge-pill">{product.badge}</span>
-                    </div>
-                  )}
                   <div className="product-floor-shadow" style={{ zIndex: 2 }} />
                   <img
                     src={product.image}
