@@ -21,6 +21,7 @@ export const Navbar: React.FC = () => {
     { label: 'Camel Skin Lamp', path: '/shop?c=tables' },
     { label: 'Truck Art', path: '/shop?c=textiles' },
     { label: 'Heroes', path: '/stories' },
+    { label: 'About', path: '/about' },
   ];
 
   return (

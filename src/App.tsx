@@ -7,6 +7,7 @@ import { ShopPage } from './pages/ShopPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { LoginPage } from './pages/LoginPage';
 import { StoriesPage } from './pages/StoriesPage';
+import { AboutPage } from './pages/AboutPage';
 
 export default function App() {
   const { currentPath } = useShop();
@@ -26,6 +27,10 @@ export default function App() {
 
     if (pathname.startsWith('/stories') || pathname.startsWith('/heroes')) {
       return <StoriesPage />;
+    }
+
+    if (pathname.startsWith('/about')) {
+      return <AboutPage />;
     }
 
     if (pathname.startsWith('/login')) {

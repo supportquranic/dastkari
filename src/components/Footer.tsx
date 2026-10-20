@@ -38,6 +38,7 @@ export const Footer: React.FC = () => {
               <button onClick={() => navigateTo('/')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>Home</button>
               <button onClick={() => navigateTo('/shop')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>All Handcrafts</button>
               <button onClick={() => navigateTo('/stories')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>Artisan Heroes</button>
+              <button onClick={() => navigateTo('/about')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>About Us</button>
               <button onClick={() => navigateTo('/shop?c=seating')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>Blue Pottery</button>
               <button onClick={() => navigateTo('/shop?c=lighting')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>Ajrak</button>
               <button onClick={() => navigateTo('/shop?c=tables')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>Camel Skin Lamp</button>

@@ -278,8 +278,6 @@ export const HeroBento: React.FC = () => {
             position: 'relative',
             overflow: 'hidden',
             cursor: 'pointer',
-            border: '3px solid #FFC81A',
-            boxShadow: '0 0 0 1.5px #E0A000, 0 8px 20px rgba(224, 160, 0, 0.16)',
             minHeight: 0,
           }}
         >

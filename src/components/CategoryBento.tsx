@@ -47,9 +47,13 @@ export const CategoryBento: React.FC = () => {
       image: '/images/ajrak1.webp',
       gridArea: 'lighting',
       isLarge: false,
-      imageWidth: '55%',
+      imageWidth: '38%',
       imageBottom: '10px',
-      imageRight: '20px',
+      imageRight: '18px',
+      secondaryImage: '/images/ajrak2.webp',
+      secondaryWidth: '38%',
+      secondaryBottom: '10px',
+      secondaryRight: 'calc(38% + 18px)',
     },
     {
       id: 'tables',
@@ -139,7 +143,6 @@ export const CategoryBento: React.FC = () => {
       {/* 4-column × 2-row Bento Grid */}
       <div className="category-bento-grid">
         {categories.map(cat => {
-          const isTruckArt = cat.id === 'textiles';
           return (
             <div
               key={cat.id}
@@ -150,8 +153,6 @@ export const CategoryBento: React.FC = () => {
                 gridArea: cat.gridArea,
                 position: 'relative',
                 overflow: 'hidden',
-                border: isTruckArt ? '3.5px solid #FFC81A' : undefined,
-                boxShadow: isTruckArt ? '0 0 0 1.5px #E0A000, 0 10px 26px rgba(224, 160, 0, 0.16)' : undefined,
               }}
             >
               {/* Header: Title/Count on Left, Arrow Circle on Right */}
