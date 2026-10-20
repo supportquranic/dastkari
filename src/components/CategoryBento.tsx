@@ -16,6 +16,10 @@ export const CategoryBento: React.FC = () => {
     imageWidth: string;
     imageBottom: string;
     imageRight: string;
+    secondaryImage?: string;
+    secondaryWidth?: string;
+    secondaryBottom?: string;
+    secondaryRight?: string;
     pattern?: string;
     patternOpacity?: number;
     patternSize?: string;
@@ -67,9 +71,13 @@ export const CategoryBento: React.FC = () => {
       image: '/images/cushion.webp',
       gridArea: 'textiles',
       isLarge: false,
-      imageWidth: '36%',
+      imageWidth: '33%',
       imageBottom: '16px',
-      imageRight: '36px',
+      imageRight: '24px',
+      secondaryImage: '/images/bowl.webp',
+      secondaryWidth: '31%',
+      secondaryBottom: '22px',
+      secondaryRight: '170px',
     },
   ];
 
@@ -182,6 +190,21 @@ export const CategoryBento: React.FC = () => {
 
               {/* Cutout Image with Inset and Hover Animation - ON TOP of pattern */}
               <div className="category-cutout-wrap" style={{ zIndex: 5 }}>
+                {cat.secondaryImage && (
+                  <img
+                    src={cat.secondaryImage}
+                    alt={`${cat.name} pair`}
+                    className="category-cutout-img"
+                    style={{
+                      width: cat.secondaryWidth || cat.imageWidth,
+                      maxHeight: '78%',
+                      bottom: cat.secondaryBottom || cat.imageBottom,
+                      right: cat.secondaryRight || '170px',
+                      zIndex: 4,
+                      objectFit: 'contain',
+                    }}
+                  />
+                )}
                 <img
                   src={cat.image}
                   alt={cat.name}
@@ -192,6 +215,7 @@ export const CategoryBento: React.FC = () => {
                     bottom: cat.imageBottom,
                     right: cat.imageRight,
                     zIndex: 5,
+                    objectFit: 'contain',
                   }}
                 />
               </div>
