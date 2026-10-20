@@ -228,14 +228,14 @@ export const StoryShowcase: React.FC = () => {
         }}
       >
         <img
-          src="/images/interior.jpg"
+          src="/images/poster1.png"
           alt="Room showcase"
           style={{
             width: '100%',
-            height: '120%',
+            height: '100%',
             objectFit: 'cover',
             position: 'absolute',
-            top: '-10%',
+            top: 0,
             left: 0,
             transition: 'transform 800ms var(--ease-shared)',
           }}
