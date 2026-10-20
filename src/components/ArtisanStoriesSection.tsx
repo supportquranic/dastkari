@@ -15,8 +15,7 @@ export const ArtisanStoriesSection: React.FC = () => {
       story:
         'In the historic alleyways of Multan, Ustad Allah Ditta turns local riverbed clay on foot-spun wooden wheels, hand-painting turquoise and Persian cobalt floral motifs that have remained unbroken for four centuries.',
       quote: '“The clay listens to your fingers. If you hurry, it loses its soul.”',
-      image: '/images/Artisan Painting a Blue Floral Vase.png',
-      webpImage: '/images/artisan-pottery.webp',
+      image: '/images/artisan-pottery.png',
       linkText: 'Explore Blue Pottery',
       linkPath: '/shop?c=seating',
       accent: '#2B579A',
@@ -30,8 +29,7 @@ export const ArtisanStoriesSection: React.FC = () => {
       story:
         'Preserving the sacred 16-step organic resist-dyeing tradition of Sindhi Ajrak. Hand-carved wooden blocks (pore), pure natural indigo, and sun-baked river clays give these geometric heirloom textiles their living spirit.',
       quote: '“True Ajrak breathes with the climate and deepens with time.”',
-      image: '/images/Riverside Sindhi artisan block printing.png',
-      webpImage: '/images/artisan-ajrak.webp',
+      image: '/images/artisan-ajrak.png',
       linkText: 'Explore Ajrak Textiles',
       linkPath: '/shop?c=lighting',
       accent: '#9A2B2B',
@@ -45,8 +43,7 @@ export const ArtisanStoriesSection: React.FC = () => {
       story:
         'Abdul Rehman cleans and sculpts natural desert leather until it turns parchment-thin and translucent. Hand-painted with rich organic lacquer naqashi motifs, each lamp casts an amber, meditative warmth into the modern home.',
       quote: '“When the bulb glows inside, the parchment comes alive like stained glass.”',
-      image: '/images/Workshop Artisan Painting a Glowing Camel-Skin Globe.png',
-      webpImage: '/images/artisan-camellamp.webp',
+      image: '/images/artisan-camellamp.png',
       linkText: 'Discover Camel Skin Lamps',
       linkPath: '/shop?c=tables',
       accent: '#C47B2B',
@@ -60,8 +57,7 @@ export const ArtisanStoriesSection: React.FC = () => {
       story:
         'Transforming everyday objects and slow-living decor into vibrant kaleidoscope canvases with intricate floral patterns, reflective chamakpatti, and poetic calligraphy celebrating the boundless spirit of folk imagination.',
       quote: '“Color is the language of celebration and devotion.”',
-      image: '/images/Smiling Artisan Painting a Peacock Panel.png',
-      webpImage: '/images/artisan-truckart.webp',
+      image: '/images/artisan-truckart.png',
       linkText: 'Explore Truck Art Objects',
       linkPath: '/shop?c=textiles',
       accent: '#2EA043',
@@ -265,25 +261,25 @@ export const ArtisanStoriesSection: React.FC = () => {
                 gridColumn: 'span 6',
                 position: 'relative',
                 minHeight: '380px',
+                width: '100%',
                 overflow: 'hidden',
               }}
             >
-              <picture style={{ width: '100%', height: '100%', display: 'block' }}>
-                <source srcSet={story.webpImage} type="image/webp" />
-                <img
-                  src={story.image}
-                  alt={`${story.artisanName} - ${story.title}`}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block',
-                    transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-                  }}
-                  className="artisan-card-img"
-                  loading="lazy"
-                />
-              </picture>
+              <img
+                src={story.image}
+                alt={`${story.artisanName} - ${story.title}`}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block',
+                  transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                }}
+                className="artisan-card-img"
+              />
             </div>
           </div>
         ))}
