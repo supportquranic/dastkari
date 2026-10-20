@@ -43,7 +43,6 @@ export const HeroBento: React.FC = () => {
             flexDirection: 'column',
             justifyContent: 'space-between',
             backgroundColor: 'var(--card)',
-            border: '1.5px solid rgba(181, 91, 44, 0.22)',
             minHeight: 0,
             overflow: 'hidden',
           }}
@@ -116,7 +115,6 @@ export const HeroBento: React.FC = () => {
             gridColumn: 'span 5',
             gridRow: 'span 6',
             backgroundColor: 'var(--sage)',
-            border: '1.5px solid rgba(132, 160, 122, 0.45)',
             position: 'relative',
             overflow: 'hidden',
             display: 'flex',
@@ -376,7 +374,6 @@ export const HeroBento: React.FC = () => {
             gridColumn: 'span 3',
             gridRow: 'span 2',
             backgroundColor: 'var(--card)',
-            border: '1.5px solid rgba(181, 91, 44, 0.22)',
             padding: '20px 22px',
             display: 'flex',
             flexDirection: 'column',

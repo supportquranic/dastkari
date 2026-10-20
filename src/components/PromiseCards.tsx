@@ -5,28 +5,24 @@ export const PromiseCards: React.FC = () => {
   const cards = [
     {
       tint: 'var(--sky)',
-      borderColor: 'rgba(135, 168, 208, 0.55)',
       icon: <Hand size={20} color="var(--main-ink)" strokeWidth={1.8} />,
       label: 'MADE BY HAND',
       desc: 'One piece at a time, so no two are ever alike.',
     },
     {
       tint: 'var(--blush)',
-      borderColor: 'rgba(200, 148, 122, 0.55)',
       icon: <Paintbrush size={20} color="var(--main-ink)" strokeWidth={1.8} />,
       label: 'ARTISAN-LED',
       desc: 'Made by skilled artisans whose knowledge is passed down through generations.',
     },
     {
       tint: 'var(--butter)',
-      borderColor: 'rgba(212, 178, 88, 0.55)',
       icon: <Flower2 size={20} color="var(--main-ink)" strokeWidth={1.8} />,
       label: 'CRAFT PRESERVATION',
       desc: 'Helping keep Ajrak, Kashi Kari, hand weaving, pottery, and other living traditions alive.',
     },
     {
       tint: 'var(--sage)',
-      borderColor: 'rgba(132, 160, 122, 0.5)',
       icon: <HeartHandshake size={20} color="var(--main-ink)" strokeWidth={1.8} />,
       label: 'FAIR TRADE',
       desc: 'Supporting fair pay, sustainable livelihoods, and dignified opportunities for artisans.',
@@ -79,7 +75,6 @@ export const PromiseCards: React.FC = () => {
             className="card-tile promise-card"
             style={{
               backgroundColor: c.tint,
-              border: `1.5px solid ${c.borderColor}`,
               padding: 'clamp(28px, 2.4vw, 36px)',
               borderRadius: 'var(--radius-tile)',
               display: 'flex',

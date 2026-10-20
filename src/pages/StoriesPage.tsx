@@ -27,7 +27,6 @@ export const StoriesPage: React.FC = () => {
         style={{
           padding: 'clamp(36px, 5vw, 64px)',
           backgroundColor: 'var(--card)',
-          border: '1px solid var(--dividers)',
           marginBottom: '48px',
         }}
       >

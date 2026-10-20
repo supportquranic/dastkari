@@ -24,7 +24,7 @@ export default function App() {
       return <ShopPage />;
     }
 
-    if (pathname.startsWith('/stories')) {
+    if (pathname.startsWith('/stories') || pathname.startsWith('/heroes')) {
       return <StoriesPage />;
     }
 

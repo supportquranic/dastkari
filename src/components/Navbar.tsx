@@ -20,7 +20,7 @@ export const Navbar: React.FC = () => {
     { label: 'Ajrak', path: '/shop?c=lighting' },
     { label: 'Camel Skin Lamp', path: '/shop?c=tables' },
     { label: 'Truck Art', path: '/shop?c=textiles' },
-    { label: 'Stories', path: '/stories' },
+    { label: 'Heroes', path: '/stories' },
   ];
 
   return (

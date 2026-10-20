@@ -158,7 +158,6 @@ export const HomePage: React.FC = () => {
           style={{
             padding: 'clamp(32px, 4vw, 56px)',
             backgroundColor: 'var(--card)',
-            border: '1px solid var(--dividers)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -187,7 +186,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           <button className="btn-pill btn-pill-ink" style={{ height: '50px', padding: '0 26px', fontSize: '14px' }}>
-            <span>Explore Artisan Stories</span>
+            <span>Explore Artisan Heroes</span>
             <ArrowRight size={17} />
           </button>
         </div>

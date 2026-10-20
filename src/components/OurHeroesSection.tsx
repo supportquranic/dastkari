@@ -108,23 +108,22 @@ export const OurHeroesSection: React.FC = () => {
             className="card-tile hero-card-item"
             style={{
               backgroundColor: 'var(--main-ink)',
-              padding: '24px',
+              padding: '10px 10px 22px',
               borderRadius: 'var(--radius-tile)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
               boxShadow: '0 16px 36px -12px rgba(181, 91, 44, 0.28)',
-              border: '1px solid rgba(228, 211, 194, 0.2)',
               transition: 'transform 300ms var(--ease-shared), box-shadow 300ms var(--ease-shared)',
             }}
           >
-            {/* Image Portrait Box with Full 4:5 Reveal */}
+            {/* Image Portrait Box with Reduced Top & Side Spacing */}
             <div>
               <div
                 style={{
                   width: '100%',
                   aspectRatio: '4 / 5',
-                  borderRadius: '20px',
+                  borderRadius: '18px',
                   overflow: 'hidden',
                   position: 'relative',
                   boxShadow: '0 8px 24px rgba(0, 0, 0, 0.25)',
@@ -145,71 +144,74 @@ export const OurHeroesSection: React.FC = () => {
                 />
               </div>
 
-              {/* Craft Label & Origin */}
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  marginTop: '18px',
-                  fontSize: '12px',
-                }}
-              >
-                <span
-                  className="font-mono"
+              {/* Text Information Container */}
+              <div style={{ padding: '0 8px' }}>
+                {/* Craft Label & Origin */}
+                <div
                   style={{
-                    color: 'rgba(228, 211, 194, 0.7)',
-                    fontSize: '11px',
-                    fontWeight: 650,
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    marginTop: '16px',
+                    fontSize: '12px',
                   }}
                 >
-                  {hero.craft}
-                </span>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'rgba(228, 211, 194, 0.85)', fontSize: '12px' }}>
-                  <MapPin size={12} color="#E4D3C2" />
-                  <span>{hero.location}</span>
+                  <span
+                    className="font-mono"
+                    style={{
+                      color: 'rgba(228, 211, 194, 0.7)',
+                      fontSize: '11px',
+                      fontWeight: 650,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    {hero.craft}
+                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'rgba(228, 211, 194, 0.85)', fontSize: '12px' }}>
+                    <MapPin size={12} color="#E4D3C2" />
+                    <span>{hero.location}</span>
+                  </div>
                 </div>
+
+                {/* Artisan Name */}
+                <h3
+                  className="font-display"
+                  style={{
+                    fontSize: '22px',
+                    fontWeight: 650,
+                    color: '#E4D3C2',
+                    marginTop: '10px',
+                    lineHeight: 1.1,
+                  }}
+                >
+                  {hero.name}
+                </h3>
+
+                {/* Quote */}
+                <p
+                  style={{
+                    fontSize: '13px',
+                    lineHeight: 1.5,
+                    color: 'rgba(228, 211, 194, 0.85)',
+                    marginTop: '10px',
+                    fontStyle: 'italic',
+                  }}
+                >
+                  “{hero.quote}”
+                </p>
               </div>
-
-              {/* Artisan Name */}
-              <h3
-                className="font-display"
-                style={{
-                  fontSize: '22px',
-                  fontWeight: 650,
-                  color: '#E4D3C2',
-                  marginTop: '10px',
-                  lineHeight: 1.1,
-                }}
-              >
-                {hero.name}
-              </h3>
-
-              {/* Quote */}
-              <p
-                style={{
-                  fontSize: '13px',
-                  lineHeight: 1.5,
-                  color: 'rgba(228, 211, 194, 0.85)',
-                  marginTop: '10px',
-                  fontStyle: 'italic',
-                }}
-              >
-                “{hero.quote}”
-              </p>
             </div>
 
             {/* Bottom experience tag */}
             <div
               style={{
+                margin: '20px 8px 0',
+                paddingTop: '14px',
+                borderTop: '1px solid rgba(228, 211, 194, 0.2)',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '6px',
-                marginTop: '20px',
-                paddingTop: '14px',
-                borderTop: '1px solid rgba(228, 211, 194, 0.2)',
                 fontSize: '12px',
                 color: '#E4D3C2',
                 fontWeight: 600,

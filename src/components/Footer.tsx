@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '16px', fontSize: '14px' }}>
               <button onClick={() => navigateTo('/')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>Home</button>
               <button onClick={() => navigateTo('/shop')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>All Handcrafts</button>
-              <button onClick={() => navigateTo('/stories')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>Artisan Stories</button>
+              <button onClick={() => navigateTo('/stories')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>Artisan Heroes</button>
               <button onClick={() => navigateTo('/shop?c=seating')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>Blue Pottery</button>
               <button onClick={() => navigateTo('/shop?c=lighting')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>Ajrak</button>
               <button onClick={() => navigateTo('/shop?c=tables')} style={{ background: 'none', border: 'none', color: '#E4D3C2', textAlign: 'left', cursor: 'pointer' }}>Camel Skin Lamp</button>
@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
               whiteSpace: 'nowrap',
             }}
           >
-            Redesigned by Talha Muzammil
+            Designed by Talha Muzammil
           </span>
           <span className="font-mono" style={{ justifySelf: 'end', textAlign: 'right' }}>
             Handcrafted in Pakistan
