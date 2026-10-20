@@ -71,13 +71,13 @@ export const CategoryBento: React.FC = () => {
       image: '/images/cushion.webp',
       gridArea: 'textiles',
       isLarge: false,
-      imageWidth: '33%',
-      imageBottom: '16px',
+      imageWidth: '29%',
+      imageBottom: '18px',
       imageRight: '24px',
       secondaryImage: '/images/bowl.webp',
-      secondaryWidth: '31%',
-      secondaryBottom: '22px',
-      secondaryRight: '170px',
+      secondaryWidth: '28%',
+      secondaryBottom: '18px',
+      secondaryRight: 'calc(29% + 56px)',
     },
   ];
 
