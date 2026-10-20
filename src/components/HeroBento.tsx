@@ -5,8 +5,8 @@ import { ArrowRight, Plus, Truck } from 'lucide-react';
 
 export const HeroBento: React.FC = () => {
   const { navigateTo, addToCart } = useShop();
-  const chairProduct = PRODUCTS.find(p => p.id === 'suroor-e-parinda-angoor-bagh') || PRODUCTS[0];
-  const pendantProduct = PRODUCTS.find(p => p.id === 'chamak-truck-pendant') || PRODUCTS[3];
+  const chairProduct = PRODUCTS.find(p => p.id === 'anaar-kali-vase' || p.aliasIds?.includes('suroor-e-parinda-angoor-bagh')) || PRODUCTS[0];
+  const pendantProduct = PRODUCTS.find(p => p.id === 'chamak-dhamak' || p.aliasIds?.includes('chamak-truck-pendant')) || PRODUCTS[3];
 
   return (
     <section

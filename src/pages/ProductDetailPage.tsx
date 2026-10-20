@@ -10,7 +10,7 @@ interface ProductDetailPageProps {
 
 export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId }) => {
   const { navigateTo, addToCart } = useShop();
-  const product = PRODUCTS.find(p => p.id === productId) || PRODUCTS[0];
+  const product = PRODUCTS.find(p => p.id === productId || p.aliasIds?.includes(productId)) || PRODUCTS[0];
 
   const [selectedFinish, setSelectedFinish] = useState<Finish>(product.finishes[0]);
   const [activeTab, setActiveTab] = useState<'details' | 'dimensions' | 'care'>('details');

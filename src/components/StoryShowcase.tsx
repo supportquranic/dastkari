@@ -243,7 +243,7 @@ export const StoryShowcase: React.FC = () => {
 
         {/* Lower Left Product Callout Pill */}
         <div
-          onClick={() => navigateTo('/product/suroor-e-parinda-angoor-bagh')}
+          onClick={() => navigateTo('/product/anaar-kali-vase')}
           style={{
             position: 'absolute',
             bottom: '24px',
@@ -284,17 +284,17 @@ export const StoryShowcase: React.FC = () => {
           >
             <img
               src="/images/chair.webp"
-              alt="Suroor e Parinda - Angoor Bagh"
+              alt="Anaar Kali Vase"
               style={{ width: '85%', height: '85%', objectFit: 'contain' }}
             />
           </div>
 
           <div>
             <div style={{ fontSize: '14px', fontWeight: 650, color: 'var(--main-ink)' }}>
-              Suroor e Parinda
+              Anaar Kali Vase
             </div>
             <div style={{ fontSize: '12px', color: 'var(--secondary-ink)' }}>
-              Rs. 8,500 · In the room
+              Rs. 4,000 · In the room
             </div>
           </div>
 

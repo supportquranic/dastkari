@@ -20,6 +20,7 @@ export interface Product {
   details: string[];
   dimensions: string;
   care: string;
+  aliasIds?: string[];
 }
 
 export interface Category {
