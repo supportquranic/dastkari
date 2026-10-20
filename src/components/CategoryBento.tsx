@@ -64,12 +64,12 @@ export const CategoryBento: React.FC = () => {
       name: 'Truck Art',
       count: '4 pieces',
       tint: 'var(--blush)',
-      image: '/images/throw.webp',
+      image: '/images/cushion.webp',
       gridArea: 'textiles',
       isLarge: false,
-      imageWidth: '56%',
-      imageBottom: '12px',
-      imageRight: '20px',
+      imageWidth: '36%',
+      imageBottom: '16px',
+      imageRight: '36px',
     },
   ];
 
@@ -188,6 +188,7 @@ export const CategoryBento: React.FC = () => {
                   className="category-cutout-img"
                   style={{
                     width: cat.imageWidth,
+                    maxHeight: '80%',
                     bottom: cat.imageBottom,
                     right: cat.imageRight,
                     zIndex: 5,
