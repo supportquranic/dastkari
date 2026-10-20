@@ -1,106 +1,36 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Truck, Moon, ShieldCheck, Leaf } from 'lucide-react';
+import React from 'react';
+import { Hand, Paintbrush, Flower2, HeartHandshake } from 'lucide-react';
 
 export const PromiseCards: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  const [val1, setVal1] = useState(0);
-  const [val2, setVal2] = useState(0);
-  const [val3, setVal3] = useState(0);
-  const [val4, setVal4] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current || hasAnimated) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.8) {
-        setHasAnimated(true);
-
-        // Animate 48h
-        let c1 = 0;
-        const t1 = setInterval(() => {
-          c1 += 2;
-          if (c1 >= 48) {
-            setVal1(48);
-            clearInterval(t1);
-          } else setVal1(c1);
-        }, 25);
-
-        // Animate 30 nights
-        let c2 = 0;
-        const t2 = setInterval(() => {
-          c2 += 1;
-          if (c2 >= 30) {
-            setVal2(30);
-            clearInterval(t2);
-          } else setVal2(c2);
-        }, 30);
-
-        // Animate 10 years
-        let c3 = 0;
-        const t3 = setInterval(() => {
-          c3 += 1;
-          if (c3 >= 10) {
-            setVal3(10);
-            clearInterval(t3);
-          } else setVal3(c3);
-        }, 50);
-
-        // Animate 100%
-        let c4 = 0;
-        const t4 = setInterval(() => {
-          c4 += 5;
-          if (c4 >= 100) {
-            setVal4(100);
-            clearInterval(t4);
-          } else setVal4(c4);
-        }, 20);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [hasAnimated]);
-
   const cards = [
     {
       tint: 'var(--sky)',
-      icon: <Truck size={18} color="var(--main-ink)" />,
-      val: hasAnimated ? val1 : 48,
-      unit: 'h',
-      title: 'Dispatch',
-      desc: 'In stock pieces leave the workshop within two days.',
+      icon: <Hand size={20} color="var(--main-ink)" strokeWidth={1.8} />,
+      label: 'MADE BY HAND',
+      desc: 'One piece at a time, so no two are ever alike.',
     },
     {
       tint: 'var(--blush)',
-      icon: <Moon size={18} color="var(--main-ink)" />,
-      val: hasAnimated ? val2 : 30,
-      unit: 'nights',
-      title: 'Home trial',
-      desc: "Live with it for a month. Free returns if it isn't right.",
+      icon: <Paintbrush size={20} color="var(--main-ink)" strokeWidth={1.8} />,
+      label: 'ARTISAN-LED',
+      desc: 'Made by skilled artisans whose knowledge is passed down through generations.',
     },
     {
       tint: 'var(--butter)',
-      icon: <ShieldCheck size={18} color="var(--main-ink)" />,
-      val: hasAnimated ? val3 : 10,
-      unit: 'years',
-      title: 'Frame warranty',
-      desc: 'Every frame and joint, for a decade.',
+      icon: <Flower2 size={20} color="var(--main-ink)" strokeWidth={1.8} />,
+      label: 'CRAFT PRESERVATION',
+      desc: 'Helping keep Ajrak, Kashi Kari, hand weaving, pottery, and other living traditions alive.',
     },
     {
       tint: 'var(--sage)',
-      icon: <Leaf size={18} color="var(--main-ink)" />,
-      val: hasAnimated ? val4 : 100,
-      unit: '%',
-      title: 'Carbon-neutral',
-      desc: 'Delivery emissions offset, packaging plastic-free.',
+      icon: <HeartHandshake size={20} color="var(--main-ink)" strokeWidth={1.8} />,
+      label: 'FAIR TRADE',
+      desc: 'Supporting fair pay, sustainable livelihoods, and dignified opportunities for artisans.',
     },
   ];
 
   return (
-    <section ref={containerRef} style={{ margin: '80px 0 100px' }}>
+    <section style={{ margin: '80px 0 100px' }}>
       {/* Header */}
       <div style={{ marginBottom: '36px' }}>
         <span
@@ -110,9 +40,10 @@ export const PromiseCards: React.FC = () => {
             letterSpacing: '0.08em',
             fontSize: '11px',
             fontWeight: 600,
+            textTransform: 'uppercase',
           }}
         >
-          THE PROMISE
+          THE DASTKARI PROMISE
         </span>
         <h2
           className="font-display"
@@ -125,7 +56,7 @@ export const PromiseCards: React.FC = () => {
             marginTop: '10px',
           }}
         >
-          Buy once, keep for good
+          Made by hand, made to matter
         </h2>
       </div>
 
@@ -141,78 +72,61 @@ export const PromiseCards: React.FC = () => {
         {cards.map((c, i) => (
           <div
             key={i}
-            className="card-tile"
+            className="card-tile promise-card"
             style={{
               backgroundColor: c.tint,
-              padding: 'clamp(28px, 2.5vw, 36px)',
+              padding: 'clamp(28px, 2.4vw, 36px)',
               borderRadius: 'var(--radius-tile)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '260px',
+              minHeight: '270px',
+              transition: 'transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 300ms ease',
+              cursor: 'default',
             }}
           >
-            {/* Small icon container at top left */}
+            {/* White icon container at top left */}
             <div
               style={{
-                width: '44px',
-                height: '44px',
+                width: '46px',
+                height: '46px',
                 borderRadius: '14px',
-                backgroundColor: 'rgba(251, 250, 247, 0.9)',
+                backgroundColor: 'rgba(251, 250, 247, 0.92)',
                 backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 2px 8px rgba(28, 27, 24, 0.06)',
-                border: '1px solid rgba(226, 221, 210, 0.6)',
+                boxShadow: '0 2px 10px rgba(28, 27, 24, 0.05)',
+                border: '1px solid rgba(226, 221, 210, 0.65)',
               }}
             >
               {c.icon}
             </div>
 
-            {/* Value, Label and Description */}
-            <div style={{ marginTop: '36px' }}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-                <span
-                  className="font-display"
-                  style={{
-                    fontSize: 'clamp(38px, 4.2vw, 54px)',
-                    fontWeight: 700,
-                    lineHeight: 0.95,
-                    letterSpacing: '-0.03em',
-                    color: 'var(--main-ink)',
-                  }}
-                >
-                  {c.val}
-                </span>
-                <span
-                  style={{
-                    fontSize: c.unit === '%' ? '24px' : '18px',
-                    fontWeight: 600,
-                    color: 'var(--main-ink)',
-                  }}
-                >
-                  {c.unit}
-                </span>
-              </div>
-
-              <div
+            {/* Label and Description */}
+            <div style={{ marginTop: '44px' }}>
+              <h3
+                className="font-display"
                 style={{
-                  fontSize: '15px',
-                  fontWeight: 650,
+                  fontSize: 'clamp(20px, 1.8vw, 24px)',
+                  fontWeight: 700,
+                  lineHeight: 1.15,
+                  letterSpacing: '-0.02em',
                   color: 'var(--main-ink)',
-                  marginTop: '12px',
+                  margin: 0,
                 }}
               >
-                {c.title}
-              </div>
+                {c.label}
+              </h3>
 
               <p
                 style={{
-                  fontSize: '13px',
-                  lineHeight: 1.5,
+                  fontSize: '13.5px',
+                  lineHeight: 1.55,
                   color: 'var(--secondary-ink)',
-                  marginTop: '6px',
+                  marginTop: '10px',
+                  marginBottom: 0,
                 }}
               >
                 {c.desc}
@@ -221,16 +135,22 @@ export const PromiseCards: React.FC = () => {
           </div>
         ))}
       </div>
+
       <style>{`
+        .promise-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 28px rgba(28, 27, 24, 0.08);
+        }
         @media (max-width: 960px) {
           .promise-cards-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
             gap: var(--gap-mobile) !important;
           }
         }
-        @media (max-width: 520px) {
+        @media (max-width: 600px) {
           .promise-cards-grid {
             grid-template-columns: 1fr !important;
+            gap: 16px !important;
           }
         }
       `}</style>
