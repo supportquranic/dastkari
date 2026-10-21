@@ -163,7 +163,7 @@ export const AboutPage: React.FC = () => {
             style={{
               gridColumn: 'span 5',
               position: 'relative',
-              minHeight: '380px',
+              minHeight: '420px',
               overflow: 'hidden',
             }}
           >
@@ -174,6 +174,7 @@ export const AboutPage: React.FC = () => {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
+                objectPosition: 'center 18%',
                 display: 'block',
               }}
             />
