@@ -270,7 +270,7 @@ export const HeroBento: React.FC = () => {
           style={{
             gridColumn: 'span 4',
             gridRow: 'span 2',
-            backgroundColor: '#465F8E',
+            backgroundColor: 'var(--card)',
             padding: '20px 22px',
             display: 'flex',
             flexDirection: 'column',
@@ -286,7 +286,7 @@ export const HeroBento: React.FC = () => {
             <span
               className="font-mono"
               style={{
-                color: '#FFE04A',
+                color: 'var(--faint-ink)',
                 textTransform: 'uppercase',
                 fontSize: '10px',
                 fontWeight: 700,
@@ -302,7 +302,7 @@ export const HeroBento: React.FC = () => {
                 fontSize: '18px',
                 fontWeight: 700,
                 marginTop: '4px',
-                color: '#FFFFFF',
+                color: 'var(--main-ink)',
                 lineHeight: 1.15,
               }}
             >
@@ -313,7 +313,7 @@ export const HeroBento: React.FC = () => {
                 fontSize: '15px',
                 fontWeight: 700,
                 marginTop: '4px',
-                color: '#FFE04A',
+                color: 'var(--main-ink)',
               }}
             >
               Rs. {pendantProduct.price.toLocaleString()}
@@ -328,10 +328,10 @@ export const HeroBento: React.FC = () => {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '5px',
-                color: '#FFFFFF',
+                color: 'var(--main-ink)',
               }}
             >
-              Explore Truck Art <ArrowRight size={13} color="#FFE04A" />
+              Explore Truck Art <ArrowRight size={13} color="var(--main-ink)" />
             </span>
           </div>
 

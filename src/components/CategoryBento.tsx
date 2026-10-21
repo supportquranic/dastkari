@@ -24,6 +24,13 @@ export const CategoryBento: React.FC = () => {
     patternOpacity?: number;
     patternSize?: string;
     patternMode?: 'tile' | 'cover';
+    extraImages?: Array<{
+      src: string;
+      width: string;
+      bottom: string;
+      right: string;
+      zIndex?: number;
+    }>;
   }
 
   const categories: CategoryItem[] = [
@@ -44,16 +51,35 @@ export const CategoryBento: React.FC = () => {
       name: 'Ajrak',
       count: '4 pieces',
       tint: 'var(--butter)',
-      image: '/images/ajrak1.webp',
+      image: '/images/ajrak1-crop.webp',
       gridArea: 'lighting',
       isLarge: false,
-      imageWidth: '38%',
+      imageWidth: '22%',
       imageBottom: '10px',
       imageRight: '18px',
-      secondaryImage: '/images/ajrak2.webp',
-      secondaryWidth: '38%',
-      secondaryBottom: '10px',
-      secondaryRight: 'calc(38% + 18px)',
+      extraImages: [
+        {
+          src: '/images/ajrak3-crop.webp',
+          width: '21%',
+          bottom: '10px',
+          right: 'calc(18px + 36%)',
+          zIndex: 3,
+        },
+        {
+          src: '/images/ajrak2-crop.webp',
+          width: '21.5%',
+          bottom: '10px',
+          right: 'calc(18px + 18%)',
+          zIndex: 4,
+        },
+        {
+          src: '/images/ajrak1-crop.webp',
+          width: '22%',
+          bottom: '10px',
+          right: '18px',
+          zIndex: 5,
+        },
+      ],
     },
     {
       id: 'tables',
@@ -191,34 +217,55 @@ export const CategoryBento: React.FC = () => {
 
               {/* Cutout Image with Inset and Hover Animation - ON TOP of pattern */}
               <div className="category-cutout-wrap" style={{ zIndex: 5 }}>
-                {cat.secondaryImage && (
-                  <img
-                    src={cat.secondaryImage}
-                    alt={`${cat.name} pair`}
-                    className="category-cutout-img"
-                    style={{
-                      width: cat.secondaryWidth || cat.imageWidth,
-                      maxHeight: '78%',
-                      bottom: cat.secondaryBottom || cat.imageBottom,
-                      right: cat.secondaryRight || '170px',
-                      zIndex: 4,
-                      objectFit: 'contain',
-                    }}
-                  />
+                {cat.extraImages ? (
+                  cat.extraImages.map((imgItem, idx) => (
+                    <img
+                      key={idx}
+                      src={imgItem.src}
+                      alt={`${cat.name} ${idx + 1}`}
+                      className="category-cutout-img"
+                      style={{
+                        width: imgItem.width,
+                        maxHeight: '80%',
+                        bottom: imgItem.bottom,
+                        right: imgItem.right,
+                        zIndex: imgItem.zIndex || 5,
+                        objectFit: 'contain',
+                      }}
+                    />
+                  ))
+                ) : (
+                  <>
+                    {cat.secondaryImage && (
+                      <img
+                        src={cat.secondaryImage}
+                        alt={`${cat.name} pair`}
+                        className="category-cutout-img"
+                        style={{
+                          width: cat.secondaryWidth || cat.imageWidth,
+                          maxHeight: '78%',
+                          bottom: cat.secondaryBottom || cat.imageBottom,
+                          right: cat.secondaryRight || '170px',
+                          zIndex: 4,
+                          objectFit: 'contain',
+                        }}
+                      />
+                    )}
+                    <img
+                      src={cat.image}
+                      alt={cat.name}
+                      className="category-cutout-img"
+                      style={{
+                        width: cat.imageWidth,
+                        maxHeight: '80%',
+                        bottom: cat.imageBottom,
+                        right: cat.imageRight,
+                        zIndex: 5,
+                        objectFit: 'contain',
+                      }}
+                    />
+                  </>
                 )}
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  className="category-cutout-img"
-                  style={{
-                    width: cat.imageWidth,
-                    maxHeight: '80%',
-                    bottom: cat.imageBottom,
-                    right: cat.imageRight,
-                    zIndex: 5,
-                    objectFit: 'contain',
-                  }}
-                />
               </div>
             </div>
           );
